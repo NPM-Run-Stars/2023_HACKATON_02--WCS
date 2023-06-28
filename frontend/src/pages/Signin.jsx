@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 import connexion from "../services/connexion";
+import { useCurrentUser } from "../contexts/AuthContexts";
 import "react-toastify/dist/ReactToastify.css";
 
 function Signin() {
@@ -8,6 +10,8 @@ function Signin() {
     email: "",
     password: "",
   });
+  const { setUser } = useCurrentUser();
+  const navigate = useNavigate();
 
   const handleUser = (event) => {
     setUserSignin({ ...userSignin, [event.target.name]: event.target.value });
@@ -28,6 +32,18 @@ function Signin() {
     try {
       const signin = await connexion.post("/signin", userSignin);
       notify(signin);
+
+      if (signin.data.role === "admin") {
+        setUser(signin.data.role);
+        setTimeout(() => {
+          navigate("/admin");
+        }, 5000);
+      } else {
+        setUser(signin.data.role);
+        setTimeout(() => {
+          navigate("/");
+        }, 5000);
+      }
     } catch (err) {
       console.error(err);
     }
