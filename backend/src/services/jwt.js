@@ -25,7 +25,6 @@ const checkUser = (req, res, next) => {
 const checkAdmin = (req, res, next) => {
   if (req.cookies.log_token) {
     const token = verifyToken(req.cookies.log_token);
-    console.log(token.role)
     if (token.role === "admin") {
       next();
     } else {

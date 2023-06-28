@@ -15,5 +15,4 @@ router.use(checkUser);
 router.use(checkAdmin);
 router.post("/signup", checkUserData, hashPassword, authControllers.signup);
 
-
 module.exports = router;
