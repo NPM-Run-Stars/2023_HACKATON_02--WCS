@@ -6,11 +6,18 @@ class MobileModelsManager extends AbstractManager {
   }
 
   findAllByBrand(brand) {
-    let url = `select m.id, m.model from ${this.table} m `;
+    let url = `select m.id, m.model, m.brand_id from ${this.table} m INNER JOIN brands b ON m.brand_id = b.id `;
     if (brand) {
-      url += " INNER JOIN brands b ON m.brand_id = b.id WHERE brand = ?";
+      url += " WHERE brand_id = ?";
     }
     return this.database.query(url, [brand]);
+  }
+
+  insert(model, brandId) {
+    return this.database.query(
+      `insert into ${this.table} (model , brand_id) values (? , ?)`,
+      [model, brandId]
+    );
   }
 }
 
