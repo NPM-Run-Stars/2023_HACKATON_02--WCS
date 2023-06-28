@@ -19,7 +19,7 @@ class BrandsManager extends AbstractManager {
 
   update(brand, id) {
     return this.database.query(
-      `update ${this.table} set brand = ? where id = ?`,
+      `UPDATE ${this.table} set brand = ? where id = ?`,
       [brand, id]
     );
   }
