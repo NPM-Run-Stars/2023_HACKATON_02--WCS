@@ -13,6 +13,22 @@ const browse = (req, res) => {
     });
 };
 
+const add = (req, res) => {
+  const { model } = req.body;
+  const brandId = parseInt(req.body.brand_id, 10);
+
+  models.mobileModels
+    .insert(model, brandId)
+    .then(([result]) => {
+      res.location(`/items/${result.insertId}`).sendStatus(201);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
 module.exports = {
   browse,
+  add,
 };
