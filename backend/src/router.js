@@ -13,5 +13,6 @@ const router = express.Router();
 const brandsControllers = require("./controllers/brandsControllers");
 
 router.get("/brands", brandsControllers.browse);
+router.get("/brands/:brand", brandsControllers.read);
 
 module.exports = router;
