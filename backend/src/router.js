@@ -16,5 +16,6 @@ router.get("/brands", brandsControllers.browse);
 router.get("/brands/:brand", brandsControllers.read);
 router.post("/brands", brandsControllers.add);
 router.put("/brands/:id", brandsControllers.edit);
+router.delete("/brands/:id", brandsControllers.destroy);
 
 module.exports = router;
