@@ -18,4 +18,8 @@ router.post("/brands", brandsControllers.add);
 router.put("/brands/:id", brandsControllers.edit);
 router.delete("/brands/:id", brandsControllers.destroy);
 
+const mobileModelsControllers = require("./controllers/mobileModelsControllers");
+
+router.get("/models", mobileModelsControllers.browse);
+
 module.exports = router;
