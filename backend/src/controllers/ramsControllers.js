@@ -1,7 +1,7 @@
 const models = require("../models");
 
 const browse = (req, res) => {
-  models.faqs
+  models.rams
     .findAll()
     .then(([rows]) => {
       res.send(rows);
@@ -13,7 +13,7 @@ const browse = (req, res) => {
 };
 
 const read = (req, res) => {
-  models.faqs
+  models.rams
     .find(req.params.id)
     .then(([rows]) => {
       if (rows[0] == null) {
@@ -29,12 +29,12 @@ const read = (req, res) => {
 };
 
 const edit = (req, res) => {
-  const faqs = req.body;
+  const rams = req.body;
 
-  faqs.id = parseInt(req.params.id, 10);
+  rams.id = parseInt(req.params.id, 10);
 
-  models.faqs
-    .update(faqs)
+  models.rams
+    .update(rams)
     .then(([result]) => {
       if (result.affectedRows === 0) {
         res.sendStatus(404);
@@ -49,12 +49,13 @@ const edit = (req, res) => {
 };
 
 const add = (req, res) => {
-  const faqs = req.body;
+  const ramProperty = req.body.property_ram;
+  const ramValue = parseInt(req.body.value_ram, 10);
 
-  models.faqs
-    .insert(faqs)
+  models.rams
+    .insert(ramProperty, ramValue)
     .then(([result]) => {
-      res.location(`/faqs/${result.insertId}`).sendStatus(201);
+      res.location(`/rams/${result.insertId}`).sendStatus(201);
     })
     .catch((err) => {
       console.error(err);
@@ -63,7 +64,7 @@ const add = (req, res) => {
 };
 
 const destroy = (req, res) => {
-  models.faqs
+  models.rams
     .delete(req.params.id)
     .then(([result]) => {
       if (result.affectedRows === 0) {
