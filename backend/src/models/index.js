@@ -49,6 +49,16 @@ const FaqsManager = require("./FaqsManager");
 models.faqs = new FaqsManager();
 models.faqs.setDatabase(pool);
 
+const CasesManager = require("./casesManager");
+
+models.cases = new CasesManager();
+models.cases.setDatabase(pool);
+
+const ScreensManager = require("./screensManager");
+
+models.screens = new ScreensManager();
+models.screens.setDatabase(pool);
+
 // bonus: use a proxy to personalize error message,
 // when asking for a non existing model
 
