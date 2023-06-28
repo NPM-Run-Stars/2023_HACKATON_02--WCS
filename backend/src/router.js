@@ -15,5 +15,6 @@ const brandsControllers = require("./controllers/brandsControllers");
 router.get("/brands", brandsControllers.browse);
 router.get("/brands/:brand", brandsControllers.read);
 router.post("/brands", brandsControllers.add);
+router.put("/brands/:id", brandsControllers.edit);
 
 module.exports = router;
