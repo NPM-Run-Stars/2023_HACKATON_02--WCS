@@ -32,6 +32,22 @@ router.put("/faqs/:id", faqsControllers.edit);
 router.post("/faqs", faqsControllers.add);
 router.delete("/faqs/:id", faqsControllers.destroy);
 
+const ramsControllers = require("./controllers/ramsControllers");
+
+router.get("/rams", ramsControllers.browse);
+router.get("/rams/:id", ramsControllers.read);
+router.put("/rams/:id", ramsControllers.edit);
+router.post("/rams", ramsControllers.add);
+router.delete("/rams/:id", ramsControllers.destroy);
+
+const storagesControllers = require("./controllers/storagesControllers");
+
+router.get("/storages", storagesControllers.browse);
+router.get("/storages/:id", storagesControllers.read);
+router.put("/storages/:id", storagesControllers.edit);
+router.post("/storages", storagesControllers.add);
+router.delete("/storages/:id", storagesControllers.destroy);
+
 const casesControllers = require("./controllers/casesControllers");
 
 router.get("/cases", casesControllers.browse);
