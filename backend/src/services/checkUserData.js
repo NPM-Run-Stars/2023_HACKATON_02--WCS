@@ -15,11 +15,9 @@ const authSchema = () => {
       .pattern(/^[a-zA-Z0-9]+$/)
       .required(),
 
-    firstname: Joi.string().alphanum().required(),
-
-    lastname: Joi.string().alphanum().required(),
-
-    localisation: Joi.string().alphanum().required(),
+    firstname: Joi.string().alphanum(),
+    lastname: Joi.string().alphanum(),
+    localisation: Joi.string().alphanum(),
   });
 };
 
