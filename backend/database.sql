@@ -3,7 +3,7 @@
 CREATE TABLE
     brands (
         id int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-        name varchar(255) NOT NULL
+        brand varchar(255) NOT NULL
     ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
 CREATE TABLE
@@ -77,7 +77,7 @@ CREATE TABLE
         CONSTRAINT fk_localisation_id FOREIGN KEY (localisation_id) REFERENCES localisations(id) ON DELETE CASCADE
     ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
-INSERT INTO brands(name) VALUES ('Iphone'), ('Samsung'), ('Xiaomi');
+INSERT INTO brands(brand) VALUES ('Iphone'), ('Samsung'), ('Xiaomi');
 
 INSERT INTO
     models(model, brand_id)
