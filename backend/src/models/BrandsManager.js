@@ -10,6 +10,12 @@ class BrandsManager extends AbstractManager {
       brand,
     ]);
   }
+
+  insert(brand) {
+    return this.database.query(`insert into ${this.table} (brand) values (?)`, [
+      brand,
+    ]);
+  }
 }
 
 module.exports = BrandsManager;
