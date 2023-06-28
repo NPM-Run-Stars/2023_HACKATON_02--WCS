@@ -18,4 +18,12 @@ router.put("/faqs/:id", faqsControllers.edit);
 router.post("/faqs", faqsControllers.add);
 router.delete("/faqs/:id", faqsControllers.destroy);
 
+const casesControllers = require("./controllers/casesControllers");
+
+router.get("/cases", casesControllers.browse);
+
+const screensControllers = require("./controllers/screensControllers");
+
+router.get("/screens", screensControllers.browse);
+
 module.exports = router;
