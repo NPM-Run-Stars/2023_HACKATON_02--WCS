@@ -1,8 +1,9 @@
 const models = require("../models");
 
 const browse = (req, res) => {
+  const { brand } = req.query;
   models.mobileModels
-    .findAll()
+    .findAllByBrand(brand)
     .then(([rows]) => {
       res.send(rows);
     })
