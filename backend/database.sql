@@ -3,11 +3,11 @@
 CREATE TABLE
     brands (
         id int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-        name varchar(255) NOT NULL
+        brand varchar(255) NOT NULL
     ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
 CREATE TABLE
-    models (
+    mobile_models (
         id int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
         model varchar(255) NOT NULL,
         brand_id int NOT NULL,
@@ -69,7 +69,7 @@ CREATE TABLE
         price INT NOT NULL,
         category_id INT NOT NULL,
         localisation_id INT NOT NULL,
-        CONSTRAINT fk_model_id FOREIGN KEY (model_id) REFERENCES models(id) ON DELETE CASCADE,
+        CONSTRAINT fk_model_id FOREIGN KEY (model_id) REFERENCES mobile_models(id) ON DELETE CASCADE,
         CONSTRAINT fk_ram_id FOREIGN KEY (ram_id) REFERENCES rams(id) ON DELETE CASCADE,
         CONSTRAINT fk_storage_id FOREIGN KEY (storage_id) REFERENCES storages(id) ON DELETE CASCADE,
         CONSTRAINT fk_case_id FOREIGN KEY (case_id) REFERENCES cases(id) ON DELETE CASCADE,
@@ -87,7 +87,7 @@ CREATE TABLE
 INSERT INTO brands(name) VALUES ('Iphone'), ('Samsung'), ('Xiaomi');
 
 INSERT INTO
-    models(model, brand_id)
+    mobile_models(model, brand_id)
 VALUES ('Iphone 13', 1), ('Iphone 14', 1), ('Galaxy S20', 2), ('Galaxy S21', 2), ('MI 11', 3), ('MI 12', 3);
 
 INSERT INTO
