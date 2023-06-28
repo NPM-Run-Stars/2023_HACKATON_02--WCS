@@ -16,7 +16,11 @@ const postData = (url, body) => {
       "Content-Type": "application/json",
     },
   })
-    .then(async (res) => ({ data: await res.json(), status: res.status }))
+    .then(async (res) =>
+      res.status === 401
+        ? { status: res.status }
+        : { data: await res.json(), status: res.status }
+    )
     .catch((err) => console.error(err));
 };
 

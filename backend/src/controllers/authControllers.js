@@ -3,8 +3,6 @@ const { checkPassword } = require("../services/auth");
 const { createJwt } = require("../services/jwt");
 
 const signup = async (req, res) => {
-  console.info(req.body);
-
   try {
     const users = await models.auth.insert(req.body);
     await models.profils.insertProfils(users[0].insertId, req.body);
@@ -32,9 +30,12 @@ const signin = async (req, res) => {
         httpOnly: true,
         expire: new Date() + 1000 * 60 * 60,
       })
-      .json({ role: user[0][0].role });
+      .json({
+        role: user[0][0].role,
+        msg: "Connexion réussit, redirection dans 5 secondes",
+      });
   } else {
-    res.status(401).send("Wrong credentials");
+    res.sendStatus(401);
   }
 };
 
