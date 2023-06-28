@@ -77,6 +77,13 @@ CREATE TABLE
         CONSTRAINT fk_localisation_id FOREIGN KEY (localisation_id) REFERENCES localisations(id) ON DELETE CASCADE
     ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
+CREATE TABLE 
+    faqs (
+        id int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+        question varchar(255) NOT NULL,
+        answer varchar(255) NOT NULL
+    ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+
 INSERT INTO brands(name) VALUES ('Iphone'), ('Samsung'), ('Xiaomi');
 
 INSERT INTO
@@ -146,3 +153,8 @@ INSERT INTO
         color
     )
 VALUES ("HC", 0, 90, "Blue"), ("C", 90, 165, "Vert"), ("B", 165, 255, "Jaune"), ("A", 255, 375, "Orange"), ("Premium", 375, 495, "Red");
+
+INSERT INTO faqs (question, answer) VALUES ("Question 1", "Answer 1");
+INSERT INTO faqs (question, answer) VALUES ("Question 2", "Answer 2");
+INSERT INTO faqs (question, answer) VALUES ("Question 3", "Answer 3");
+INSERT INTO faqs (question, answer) VALUES ("Question 4", "Answer 4");
