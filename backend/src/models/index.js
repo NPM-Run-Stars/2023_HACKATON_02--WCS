@@ -34,6 +34,16 @@ const ItemManager = require("./ItemManager");
 models.item = new ItemManager();
 models.item.setDatabase(pool);
 
+const AuthManager = require("./AuthManager");
+
+models.auth = new AuthManager();
+models.auth.setDatabase(pool);
+
+const ProfilsManager = require("./ProfilsManager");
+
+models.profils = new ProfilsManager();
+models.profils.setDatabase(pool);
+
 // bonus: use a proxy to personalize error message,
 // when asking for a non existing model
 
