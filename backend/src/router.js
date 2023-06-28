@@ -22,5 +22,6 @@ const mobileModelsControllers = require("./controllers/mobileModelsControllers")
 
 router.get("/models", mobileModelsControllers.browse);
 router.post("/models", mobileModelsControllers.add);
+router.delete("/models/:id", mobileModelsControllers.destroy);
 
 module.exports = router;
