@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import connexion from "../services/connexion";
 import "react-toastify/dist/ReactToastify.css";
@@ -11,6 +11,20 @@ function Signup() {
     lastname: "",
     localisation: "",
   });
+
+  const [localisations, setLocalisations] = useState([]);
+
+  useEffect(() => {
+    const getLocalisation = async () => {
+      try {
+        const local = await connexion.get("/localisation");
+        setLocalisations(local);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    getLocalisation();
+  }, []);
 
   const handleUser = (event) => {
     setUserSignup({ ...userSignup, [event.target.name]: event.target.value });
@@ -74,13 +88,13 @@ function Signup() {
         />
         <label htmlFor="lastname">lastname</label>
 
-        <input
-          type="text"
-          value={userSignup.localisation}
-          onChange={(event) => handleUser(event)}
-          name="localisation"
-          required
-        />
+        <select name="localisation" onClick={(event) => handleUser(event)}>
+          {localisations.map((localisation) => (
+            <option key={localisation.id} value={localisation.id}>
+              {localisation.place}
+            </option>
+          ))}
+        </select>
         <label htmlFor="localisation">localisation</label>
 
         <button type="button" onClick={(event) => createAccount(event)}>

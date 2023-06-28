@@ -44,6 +44,11 @@ const ProfilsManager = require("./ProfilsManager");
 models.profils = new ProfilsManager();
 models.profils.setDatabase(pool);
 
+const LocalisationManager = require("./LocalisationManager");
+
+models.localisations = new LocalisationManager();
+models.localisations.setDatabase(pool);
+
 // bonus: use a proxy to personalize error message,
 // when asking for a non existing model
 

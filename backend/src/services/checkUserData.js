@@ -17,7 +17,7 @@ const authSchema = () => {
 
     firstname: Joi.string().alphanum(),
     lastname: Joi.string().alphanum(),
-    localisation: Joi.string().alphanum(),
+    localisation: Joi.number().integer(),
   });
 };
 
