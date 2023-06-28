@@ -16,6 +16,13 @@ class BrandsManager extends AbstractManager {
       brand,
     ]);
   }
+
+  update(brand, id) {
+    return this.database.query(
+      `update ${this.table} set brand = ? where id = ?`,
+      [brand, id]
+    );
+  }
 }
 
 module.exports = BrandsManager;
