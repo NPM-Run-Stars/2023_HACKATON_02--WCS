@@ -7,7 +7,7 @@ const signup = async (req, res) => {
     const users = await models.auth.insert(req.body);
     await models.profils.insertProfils(users[0].insertId, req.body);
 
-    res.status(201).json({ msg: "Compte créé, Merci de vous identifier." });
+    res.status(201).json({ msg: "Le compte a été crée." });
   } catch (error) {
     if (error.code === "ER_DUP_ENTRY") {
       res.status(409).json({ msg: "Email déjà existant." });

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
 import connexion from "../services/connexion";
+import "react-toastify/dist/ReactToastify.css";
 
 function Signup() {
   const [userSignup, setUserSignup] = useState({
@@ -14,11 +16,21 @@ function Signup() {
     setUserSignup({ ...userSignup, [event.target.name]: event.target.value });
   };
 
+  const notify = (signup) => {
+    if (signup.status === 201) {
+      toast.success(signup.data.msg);
+    } else if (signup.status === 400) {
+      toast.warning(signup.data.msg);
+    } else if (signup.status === 409) {
+      toast.error("l'email existe déjà");
+    }
+  };
+
   const createAccount = async (event) => {
     event.preventDefault();
     try {
       const signup = await connexion.post("/signup", userSignup);
-      console.info(signup);
+      notify(signup);
     } catch (err) {
       console.error(err);
     }
@@ -74,6 +86,12 @@ function Signup() {
         <button type="button" onClick={(event) => createAccount(event)}>
           Signup
         </button>
+        <ToastContainer
+          autoClose={5000}
+          position="top-center"
+          draggable
+          pauseOnHover
+        />
       </form>
     </div>
   );
