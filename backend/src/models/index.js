@@ -44,6 +44,11 @@ const MobileModelsManager = require("./MobileModelsManager");
 models.mobileModels = new MobileModelsManager();
 models.mobileModels.setDatabase(pool);
 
+const FaqsManager = require("./FaqsManager");
+
+models.faqs = new FaqsManager();
+models.faqs.setDatabase(pool);
+
 // bonus: use a proxy to personalize error message,
 // when asking for a non existing model
 
