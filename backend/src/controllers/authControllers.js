@@ -1,6 +1,6 @@
 const models = require("../models");
 const { checkPassword } = require("../services/auth");
-// const { createJwt } = require("../services/jwt");
+const { createJwt } = require("../services/jwt");
 
 const signup = async (req, res) => {
   console.info(req.body);
@@ -25,14 +25,13 @@ const signin = async (req, res) => {
     user[0] &&
     (await checkPassword(user[0][0].password, req.body.password))
   ) {
-    // const token = createJwt({ email: req.body.email, role: user[0][0].role });
-
+    const token = createJwt({ email: req.body.email, role: user[0][0].role });
     res
       .status(200)
-      //   .cookie("ott_token", token, {
-      //     httpOnly: true,
-      //     expire: new Date() + 1000 * 60 * 60,
-      //   })
+      .cookie("log_token", token, {
+        httpOnly: true,
+        expire: new Date() + 1000 * 60 * 60,
+      })
       .json({ role: user[0][0].role });
   } else {
     res.status(401).send("Wrong credentials");

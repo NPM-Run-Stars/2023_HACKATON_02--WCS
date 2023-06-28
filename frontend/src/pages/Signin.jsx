@@ -14,7 +14,8 @@ function Signin() {
   const login = async (event) => {
     event.preventDefault();
     try {
-      await connexion.post("/signin", userSignin);
+      const signin = await connexion.post("/signin", userSignin);
+      console.info(signin);
     } catch (err) {
       console.error(err);
     }
