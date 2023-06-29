@@ -1,5 +1,7 @@
 🧰 Languages & Frameworks used :
+<p>
 [![My Skills](https://skills.thijs.gg/icons?i=js,html,css,react,mysql,nodejs)](https://skills.thijs.gg)
+</p>
 
 
 🖥️ Software & Tools used :
@@ -12,6 +14,7 @@
   <img align="left" alt="Discord" style="padding-right:0.5rem;" src="https://img.shields.io/badge/-Discord-5865F2.svg?logo=discord&logoColor=white"/>
 </p>
 </br>
+
 
 Team Devs
 
