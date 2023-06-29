@@ -28,13 +28,16 @@ const read = (req, res) => {
     });
 };
 
-const add = (req, res) => {
+const add = async (req, res) => {
   const { brand } = req.body;
-
   models.brands
     .insert(brand)
     .then(([result]) => {
-      res.location(`/items/${result.insertId}`).sendStatus(201);
+      if (result.affectedRows !== 0) {
+        res.sendStatus(204);
+      } else {
+        res.sendStatus(404);
+      }
     })
     .catch((err) => {
       console.error(err);

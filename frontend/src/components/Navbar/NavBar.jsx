@@ -38,7 +38,11 @@ function NavBar() {
 
             {user.role === "admin" && (
               <>
-                <Link to="/admin" className="menu-item" onClick={closeNav}>
+                <Link
+                  to="/admin/brands"
+                  className="menu-item"
+                  onClick={closeNav}
+                >
                   Téléphone
                 </Link>
                 <Link to="/admin" className="menu-item" onClick={closeNav}>
