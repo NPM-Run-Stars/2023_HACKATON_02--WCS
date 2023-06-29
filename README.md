@@ -11,6 +11,7 @@
   <img align="left" alt="Figma" style="padding-right:0.5rem;" src="https://img.shields.io/badge/-Figma-F24E1E.svg?logo=figma&logoColor=white"/>
   <img align="left" alt="Discord" style="padding-right:0.5rem;" src="https://img.shields.io/badge/-Discord-5865F2.svg?logo=discord&logoColor=white"/>
 </p>
+</br>
 
 Team Devs
 
