@@ -33,8 +33,9 @@ function App() {
 
           <Route path="/" element={<UserLayout />}>
             <Route path="" element={<UserHome />} />
-            <Route path="/profil/:id" element={<Profil />} />
-            <Route path="/faq" element={<Faq />} />
+            <Route path="form" element={<Form />} />
+            <Route path="profil/:id" element={<Profil />} />
+            <Route path="faq" element={<Faq />} />
           </Route>
           <Route path="/admin" element={<AdminLayout />}>
             <Route path="" element={<AdminHome />} />
@@ -47,7 +48,6 @@ function App() {
           {/* ROBIN */}
 
           {/* LUCAS */}
-          <Route path="/form" element={<Form />} />
         </Routes>
       </Router>
       <Gabarit />
