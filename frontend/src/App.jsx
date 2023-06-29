@@ -16,7 +16,10 @@ import Gabarit from "./components/Gabarit";
 
 /* LUCAS */
 
-import "./App.css";
+import "./App.scss";
+import "./assets/Fonts/sary-soft.soft-regular.otf";
+import "./assets/Fonts/sary-soft.soft-light.otf";
+import "./assets/Fonts/sary-soft.soft-semibold.otf";
 
 function App() {
   return (
