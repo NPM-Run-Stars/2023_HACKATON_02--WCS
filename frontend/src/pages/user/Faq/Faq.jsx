@@ -20,6 +20,7 @@ function Faq() {
 
   return (
     <div className="Bloc1">
+      <h1>Foire aux questions</h1>
       {faqs.map((faq) => (
         <FaqsCard key={faq.id} faq={faq} />
       ))}
