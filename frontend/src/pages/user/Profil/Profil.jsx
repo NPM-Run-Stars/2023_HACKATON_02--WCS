@@ -50,7 +50,6 @@ function Profil() {
           alt="profil de l'utilisateur"
         />
       )}
-
       <form>
         <label htmlFor="firstname" className="label-title">
           Prénom
