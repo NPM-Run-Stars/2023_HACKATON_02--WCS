@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 /* SACHA */
 import Signin from "./pages/Signin/Signin";
 import AdminProfil from "./pages/admin/AdminProfil/AdminProfil";
+import AdminCard from "./pages/admin/AdminCard/AdminCard";
 import UserLayout from "./pages/user/UserLayout";
 import AdminLayout from "./pages/admin/AdminLayout";
 import UserHome from "./pages/user/UserHome/UserHome";
@@ -40,6 +41,7 @@ function App() {
           <Route path="/admin" element={<AdminLayout />}>
             <Route path="" element={<AdminHome />} />
             <Route path="profil" element={<AdminProfil />} />
+            <Route path="/admin/profil/:id" element={<AdminCard />} />
           </Route>
           {/* CYRIELLE */}
 

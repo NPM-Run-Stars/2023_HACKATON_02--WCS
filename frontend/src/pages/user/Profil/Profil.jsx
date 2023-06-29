@@ -32,7 +32,7 @@ function Profil() {
     setProfil([updatedProfile]);
   };
 
-  const login = async (event) => {
+  const UpdateProfil = async (event) => {
     event.preventDefault();
     try {
       await connexion.put(`/profile/update`, profil);
@@ -79,7 +79,7 @@ function Profil() {
           required
         />
 
-        <button type="button" onClick={(event) => login(event)}>
+        <button type="button" onClick={(event) => UpdateProfil(event)}>
           Mettre a jour le profil
         </button>
       </form>

@@ -26,7 +26,7 @@ function AdminProfil() {
 
       <div className="Card">
         {profils.map((profil) => (
-          <ProfilCard key={profil.email} profil={profil} />
+          <ProfilCard key={profil.id} profil={profil} />
         ))}
       </div>
     </div>
