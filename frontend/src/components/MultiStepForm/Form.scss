@@ -1,12 +1,26 @@
 .form {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
 
   h1,
   h2,
   h3,
   h4 {
     margin: 3%;
+    font-family: "Sary Soft Regular", sans-serif;
+  }
+
+  .text-script {
+    font-family: "Damion", cursive;
+    color: #23a2cb;
+    font-size: 2rem;
+  }
+
+  .main-container {
+    display: flex;
+    margin-left: 100px;
   }
 
   section {

@@ -49,20 +49,38 @@
   display: block;
   width: 35px;
   height: 5px;
-  background-color: black;
-  margin: 6px 0;
-}
-/* Icône burger */
-.burger-icon span {
-  display: block;
-  width: 35px;
-  height: 5px;
-  background-color: black;
+  background-color: #00acb0;
   margin: 6px 0;
 }
 
-#openBtn {
+.menu-item {
+  font-family: Sary Soft Regular;
+  text-align: right;
+  margin-right: 1.6rem;
+}
+
+.menu-item:hover {
+  border-bottom: 2px solid #e26d7d;
+}
+
+button#openBtn {
   position: absolute;
   left: 10px;
   top: 10px;
+  background-color: #ffffff;
+  border: none;
+}
+
+button.close {
+  background-color: transparent;
+  border: none;
+  color: #00acb0;
+}
+
+.deconnexion {
+  @include mainBtn(#00acb0);
+}
+
+button.deconnexion:hover {
+  @include mainBtnHover($red);
 }
