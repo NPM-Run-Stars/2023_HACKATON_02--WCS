@@ -6,6 +6,7 @@ import UserLayout from "./pages/user/UserLayout";
 import AdminLayout from "./pages/admin/AdminLayout";
 import UserHome from "./pages/user/UserHome/UserHome";
 import AdminHome from "./pages/admin/AdminHome/AdminHome";
+import Gabarit from "./components/Gabarit";
 
 /* CYRIELLE */
 
@@ -41,6 +42,8 @@ function App() {
           {/* LUCAS */}
         </Routes>
       </Router>
+
+      <Gabarit />
     </div>
   );
 }
