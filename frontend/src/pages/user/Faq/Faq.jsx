@@ -1,22 +1,28 @@
-import React from "react";
-// import FaqsCard from "../../../components/FaqsCard/FaqsCard";
+import React, { useState, useEffect } from "react";
+import FaqsCard from "../../../components/FaqsCard/FaqsCard";
+import connexion from "../../../services/connexion";
 
 function Faq() {
-  // const [faqs, setFaqs] = useState([]);
+  const [faqs, setFaqs] = useState([]);
 
-  // useEffect(() => {
-  //   fetch(`${import.meta.env.VITE_BACKEND_URL}/faqs`)
-  //     .then((res) => res.json())
-  //     .then((data) => setFaqs(data))
-  //     .catch((err) => console.error(err));
-  // }, []);
+  const getFaq = async () => {
+    try {
+      const faq = await connexion.get(`/faqs`);
+      setFaqs(faq);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  useEffect(() => {
+    getFaq();
+  }, []);
 
   return (
     <div className="Bloc1">
-      coucou
-      {/* {faqs.map((faq) => (
+      {faqs.map((faq) => (
         <FaqsCard key={faq.id} faq={faq} />
-      ))} */}
+      ))}
     </div>
   );
 }
