@@ -5,3 +5,7 @@
 .main-btn-red {
   @include mainBtn($red);
 }
+
+.custom-toast {
+  @include toastNotif;
+}

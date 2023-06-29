@@ -26,31 +26,39 @@ function NavBar() {
         </button>
         <ul>
           <li>
-            <Link to="/" className="menu-item">
+            <Link to="/" className="menu-item" onClick={closeNav}>
               Accueil
             </Link>
-            <Link to="/faq" className="menu-item">
+            <Link to="/faq" className="menu-item" onClick={closeNav}>
               F.A.Q
             </Link>
-            <Link to="/form" className="menu-item">
+            <Link to="/form" className="menu-item" onClick={closeNav}>
               Formulaire
             </Link>
 
             {user.role === "admin" && (
               <>
-                <Link to="/admin" className="menu-item">
+                <Link to="/admin" className="menu-item" onClick={closeNav}>
                   Téléphone
                 </Link>
-                <Link to="/admin" className="menu-item">
+                <Link to="/admin" className="menu-item" onClick={closeNav}>
                   Accessoire
                 </Link>
-                <Link to="/admin/profil" className="menu-item">
+                <Link
+                  to="/admin/profil"
+                  className="menu-item"
+                  onClick={closeNav}
+                >
                   Utilisateur
                 </Link>
               </>
             )}
 
-            <Link to={`/profil/${user.id}`} className="menu-item">
+            <Link
+              to={`/profil/${user.id}`}
+              className="menu-item"
+              onClick={closeNav}
+            >
               Paramètre
             </Link>
 
