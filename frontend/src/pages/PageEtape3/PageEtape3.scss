@@ -1,0 +1,153 @@
+.mobile-picture {
+  width: 400px;
+  height: 400px;
+  border-radius: 0;
+}
+
+.model_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.donnes_modele {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+}
+
+.model_container {
+  width: 1400px;
+}
+
+.nom-modele {
+  @include labelTitle($green);
+  font-size: 2.2rem;
+  color: $background-black;
+}
+
+.bleu {
+  color: $blue;
+}
+
+.descript-line {
+  color: $background-black;
+  text-align: left;
+  font-size: 1.6rem;
+}
+
+.descript-line svg {
+  width: 0.7em;
+  color: $blue;
+}
+
+.Etat-title {
+  font-size: 3.2rem;
+}
+
+.radio_box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+input[type="radio"]:checked::before {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  background-color: #ca8489;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: appear 0.8s;
+}
+
+.radio-container {
+  background-color: #f6f7f8;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 0.8rem;
+}
+
+fieldset {
+  border-style: none;
+  border-color: none;
+  border-image: initial;
+}
+
+.radio-legende {
+  @include legend-title;
+}
+
+@media only screen and (max-width: 600px) {
+  .donnes_modele {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .mobile-picture {
+    width: 300px;
+    height: 300px;
+  }
+
+  .Etat-title {
+    font-size: 2rem;
+  }
+}
+
+.box select {
+  background-color: #f2f2f3;
+  color: $background-black;
+  border-bottom: 5px solid $green;
+  padding: 12px;
+  width: 250px;
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+  border-radius: 10px;
+  width: 400px;
+}
+
+.box::before {
+  content: "\f13a";
+  font-family: $title-font-family;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  font-size: 28px;
+  line-height: 45px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.box:hover::before {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.box select option {
+  padding: 30px;
+}
+
+.btn-container {
+  margin-top: 4rem;
+  display: flex;
+  width: 500px;
+  gap: 10px;
+}

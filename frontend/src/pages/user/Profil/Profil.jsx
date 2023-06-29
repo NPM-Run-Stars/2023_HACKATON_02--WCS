@@ -86,7 +86,6 @@ function Profil() {
           className="basic-input formEntry animated"
           required
         />
-
         <button
           type="button"
           className="main-btn profil-btn"
