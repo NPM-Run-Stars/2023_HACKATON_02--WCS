@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import connexion from "../services/connexion";
-import { useCurrentUser } from "../contexts/AuthContexts";
+import connexion from "../../services/connexion";
+import { useCurrentUser } from "../../contexts/AuthContexts";
 import "react-toastify/dist/ReactToastify.css";
 
 function Signin() {

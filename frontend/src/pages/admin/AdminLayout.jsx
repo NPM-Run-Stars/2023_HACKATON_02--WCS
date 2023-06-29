@@ -1,6 +1,6 @@
 import React from "react";
 import { Navigate, Outlet } from "react-router-dom";
-import { useCurrentUser } from "../contexts/AuthContexts";
+import { useCurrentUser } from "../../contexts/AuthContexts";
 
 function AdminLayout() {
   const { user } = useCurrentUser();

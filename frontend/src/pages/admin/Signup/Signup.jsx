@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
-import connexion from "../services/connexion";
+import connexion from "../../../services/connexion";
 import "react-toastify/dist/ReactToastify.css";
 
 function Signup() {

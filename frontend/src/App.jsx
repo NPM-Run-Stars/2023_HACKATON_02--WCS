@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 /* SACHA */
-import Signin from "./pages/Signin";
-import Signup from "./pages/Signup";
-import UserLayout from "./pages/UserLayout";
-import AdminLayout from "./pages/AdminLayout";
-import Home from "./pages/Home";
-import AdminPage from "./pages/AdminPage";
+import Signin from "./pages/Signin/Signin";
+import Signup from "./pages/admin/Signup/Signup";
+import UserLayout from "./pages/user/UserLayout";
+import AdminLayout from "./pages/admin/AdminLayout";
+import UserHome from "./pages/user/UserHome/UserHome";
+import AdminHome from "./pages/admin/AdminHome/AdminHome";
 
 /* CYRIELLE */
 
@@ -24,13 +24,13 @@ function App() {
         <Routes>
           {/* SACHA */}
           <Route path="/login" element={<Signin />} />
-          <Route path="/signup" element={<Signup />} />
 
           <Route path="/" element={<UserLayout />}>
-            <Route path="" element={<Home />} />
+            <Route path="" element={<UserHome />} />
           </Route>
           <Route path="/admin" element={<AdminLayout />}>
-            <Route path="" element={<AdminPage />} />
+            <Route path="" element={<AdminHome />} />
+            <Route path="/signup" element={<Signup />} />
           </Route>
           {/* CYRIELLE */}
 
