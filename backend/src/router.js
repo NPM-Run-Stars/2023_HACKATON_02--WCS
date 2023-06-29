@@ -21,7 +21,10 @@ router.post("/signin", checkUserData, authControllers.signin);
 
 router.use(checkUser);
 router.get("/profile/:id", profileControllers.findUser);
-router.put("/profile", profileControllers.editUserbyId);
+router.get("/profile", profileControllers.browse);
+router.get("/admin/profile/:id", profileControllers.getUserinfo);
+router.put("/profile/update", profileControllers.editUserbyId);
+router.put("/admin/update/:id", profileControllers.AdmineditUserbyId);
 router.get("/brands", brandsControllers.browse);
 router.get("/brands/:brand", brandsControllers.read);
 router.get("/models", mobileModelsControllers.browse);

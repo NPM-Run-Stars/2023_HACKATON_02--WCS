@@ -1,0 +1,10 @@
+.Card a {
+  text-decoration: none;
+  color: black;
+}
+
+.Card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

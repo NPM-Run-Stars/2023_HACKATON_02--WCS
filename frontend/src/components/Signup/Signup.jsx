@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
-import connexion from "../../../services/connexion";
+import connexion from "../../services/connexion";
 import "react-toastify/dist/ReactToastify.css";
 
 function Signup() {
@@ -14,15 +14,16 @@ function Signup() {
 
   const [localisations, setLocalisations] = useState([]);
 
+  const getLocalisation = async () => {
+    try {
+      const local = await connexion.get("/localisation");
+      setLocalisations(local);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   useEffect(() => {
-    const getLocalisation = async () => {
-      try {
-        const local = await connexion.get("/localisation");
-        setLocalisations(local);
-      } catch (err) {
-        console.error(err);
-      }
-    };
     getLocalisation();
   }, []);
 
