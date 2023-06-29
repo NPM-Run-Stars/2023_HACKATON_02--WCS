@@ -6,7 +6,7 @@ import NavBar from "../../components/Navbar/NavBar";
 function UserLayout() {
   const { user } = useCurrentUser();
 
-  if (user === "user" || user === "admin") {
+  if (user.role === "user" || user.role === "admin") {
     return (
       <div>
         <NavBar />

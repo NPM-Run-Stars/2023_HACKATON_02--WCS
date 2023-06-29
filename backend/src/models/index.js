@@ -74,12 +74,12 @@ const StoragesManager = require("./StoragesManager");
 models.storages = new StoragesManager();
 models.storages.setDatabase(pool);
 
-const CasesManager = require("./casesManager");
+const CasesManager = require("./CasesManager");
 
 models.cases = new CasesManager();
 models.cases.setDatabase(pool);
 
-const ScreensManager = require("./screensManager");
+const ScreensManager = require("./ScreensManager");
 
 models.screens = new ScreensManager();
 models.screens.setDatabase(pool);
