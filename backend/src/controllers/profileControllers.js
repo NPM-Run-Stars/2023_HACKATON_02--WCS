@@ -13,6 +13,19 @@ const findUser = (req, res) => {
       res.sendStatus(500);
     });
 };
+
+const browse = (req, res) => {
+  models.profils
+    .getUser()
+    .then(([rows]) => {
+      res.send(rows);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
 const editUserbyId = (req, res) => {
   const profilUpdate = req.body[0];
 
@@ -30,4 +43,5 @@ const editUserbyId = (req, res) => {
 module.exports = {
   findUser,
   editUserbyId,
+  browse,
 };

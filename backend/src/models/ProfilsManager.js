@@ -18,6 +18,16 @@ class ProfilsManager extends AbstractManager {
     );
   }
 
+  getUser() {
+    return this.database.query(
+      `SELECT p.firstname, p.lastname, p.src, u.email, l.place
+      FROM ${this.table} p
+      JOIN users u ON p.user_id = u.id
+      JOIN localisations l ON p.localisation_id = l.id;`,
+      []
+    );
+  }
+
   findUser(id) {
     return this.database.query(
       `select firstname from ${this.table} where user_id = ?`,

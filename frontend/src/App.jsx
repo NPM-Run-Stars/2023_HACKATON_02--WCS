@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 /* SACHA */
 import Signin from "./pages/Signin/Signin";
-import Signup from "./pages/admin/Signup/Signup";
+import AdminProfil from "./pages/admin/AdminProfil/AdminProfil";
 import UserLayout from "./pages/user/UserLayout";
 import AdminLayout from "./pages/admin/AdminLayout";
 import UserHome from "./pages/user/UserHome/UserHome";
@@ -39,7 +39,7 @@ function App() {
           </Route>
           <Route path="/admin" element={<AdminLayout />}>
             <Route path="" element={<AdminHome />} />
-            <Route path="signup" element={<Signup />} />
+            <Route path="profil" element={<AdminProfil />} />
           </Route>
           {/* CYRIELLE */}
 

@@ -35,7 +35,7 @@ function Profil() {
   const login = async (event) => {
     event.preventDefault();
     try {
-      await connexion.put(`/profile`, profil);
+      await connexion.put(`/profile/update`, profil);
     } catch (err) {
       console.error(err);
     }
