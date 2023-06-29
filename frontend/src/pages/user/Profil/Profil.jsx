@@ -87,8 +87,8 @@ function Profil() {
         <button
           type="button"
           className="main-btn profil-btn"
-          onClick={(event) => 
-          UpdateProfil(event)}>
+          onClick={(event) => UpdateProfil(event)}
+        >
           Mettre a jour le profil
         </button>
       </form>
