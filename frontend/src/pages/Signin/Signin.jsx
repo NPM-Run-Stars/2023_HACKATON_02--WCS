@@ -32,14 +32,18 @@ function Signin() {
     try {
       const signin = await connexion.post("/signin", userSignin);
       notify(signin);
+      const profil = {
+        role: signin.data.role,
+        firstname: signin.data.firstname,
+      };
 
-      if (signin.data.role === "admin") {
-        setUser(signin.data.role);
+      if (profil.role === "admin") {
+        setUser(profil);
         setTimeout(() => {
           navigate("/admin");
         }, 5000);
       } else {
-        setUser(signin.data.role);
+        setUser(profil);
         setTimeout(() => {
           navigate("/");
         }, 5000);

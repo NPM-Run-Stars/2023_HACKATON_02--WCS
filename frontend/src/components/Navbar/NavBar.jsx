@@ -33,16 +33,16 @@ function NavBar() {
             <Link to="/" className="menu-item">
               F.A.Q
             </Link>
-            <Link to="/" className="menu-item">
+            <Link to="/profil" className="menu-item">
               Paramètre
             </Link>
 
-            {user === "admin" && (
+            {user.role === "admin" && (
               <>
-                <Link to="/admin/user" className="menu-item">
+                <Link to="/admin" className="menu-item">
                   Téléphone
                 </Link>
-                <Link to="/admin/user" className="menu-item">
+                <Link to="/admin" className="menu-item">
                   Accessoire
                 </Link>
                 <Link to="/admin/signup" className="menu-item">

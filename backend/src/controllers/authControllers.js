@@ -19,6 +19,8 @@ const signup = async (req, res) => {
 
 const signin = async (req, res) => {
   const user = await models.auth.findUser(req.body.email);
+  const profil = await models.profils.findUser(user[0][0].id);
+
   if (
     (user[0] &&
       (await checkPassword(user[0][0].password, req.body.password))) ||
@@ -34,6 +36,7 @@ const signin = async (req, res) => {
       })
       .json({
         role: user[0][0].role,
+        firstname: profil[0][0].firstname,
         msg: "Connexion réussit, redirection dans 5 secondes",
       });
   } else {

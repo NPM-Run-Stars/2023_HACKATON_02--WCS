@@ -5,6 +5,13 @@ class ProfilsManager extends AbstractManager {
     super({ table: "profils" });
   }
 
+  findUser(id) {
+    return this.database.query(
+      `select firstname from ${this.table} where user_id = ?`,
+      [id]
+    );
+  }
+
   insertProfils(userId, profil) {
     return this.database.query(
       `INSERT INTO ${this.table} (user_id, firstname, lastname, localisation_id) values (?, ?, ?, ?)`,
