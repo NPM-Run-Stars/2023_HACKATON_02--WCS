@@ -5,6 +5,12 @@ class ProfilsManager extends AbstractManager {
     super({ table: "profils" });
   }
 
+  findUserById(id) {
+    return this.database.query(`select * from ${this.table} where id = ?`, [
+      id,
+    ]);
+  }
+
   findUser(id) {
     return this.database.query(
       `select firstname from ${this.table} where user_id = ?`,

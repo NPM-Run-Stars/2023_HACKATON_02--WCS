@@ -33,9 +33,6 @@ function NavBar() {
             <Link to="/" className="menu-item">
               F.A.Q
             </Link>
-            <Link to="/profil" className="menu-item">
-              Paramètre
-            </Link>
 
             {user.role === "admin" && (
               <>
@@ -50,6 +47,10 @@ function NavBar() {
                 </Link>
               </>
             )}
+
+            <Link to={`/profil/${user.id}`} className="menu-item">
+              Paramètre
+            </Link>
 
             <button type="button" onClick={logout}>
               Déconnexion
