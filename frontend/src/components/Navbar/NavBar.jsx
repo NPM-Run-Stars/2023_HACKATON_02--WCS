@@ -30,22 +30,22 @@ function NavBar() {
             <Link to="/" className="menu-item">
               Accueil
             </Link>
-            <Link to="/" className="menu-item">
+            <Link to="/faq" className="menu-item">
               F.A.Q
             </Link>
             <Link to="/" className="menu-item">
               Paramètre
             </Link>
             <Link to="/form" className="menu-item">
-              InputForm
+              Formulaire
             </Link>
 
-            {user === "admin" && (
+            {user.role === "admin" && (
               <>
-                <Link to="/admin/user" className="menu-item">
+                <Link to="/admin" className="menu-item">
                   Téléphone
                 </Link>
-                <Link to="/admin/user" className="menu-item">
+                <Link to="/admin" className="menu-item">
                   Accessoire
                 </Link>
                 <Link to="/admin/signup" className="menu-item">
@@ -53,6 +53,10 @@ function NavBar() {
                 </Link>
               </>
             )}
+
+            <Link to={`/profil/${user.id}`} className="menu-item">
+              Paramètre
+            </Link>
 
             <button type="button" onClick={logout}>
               Déconnexion

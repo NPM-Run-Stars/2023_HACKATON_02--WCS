@@ -17,13 +17,36 @@ CREATE TABLE
         CONSTRAINT fk_user_id FOREIGN KEY (user_id) REFERENCES users(id)
     );
 
+INSERT INTO
+    users (email, password, role)
+VALUES (
+        "admin@admin.com",
+        "admin123",
+        "admin"
+    );
 
-INSERT INTO users (email, password, role) VALUES ("admin@admin.com", "admin123", "admin");
-INSERT INTO users (email, password) VALUES ("user@user.com", "user123");
+INSERT INTO
+    users (email, password)
+VALUES ("user@user.com", "user123");
 
-INSERT INTO profils (firstname, lastname, src, localisation_id, user_id)
+INSERT INTO
+    profils (
+        firstname,
+        lastname,
+        src,
+        localisation_id,
+        user_id
+    )
 VALUES ("Lucas", "LeBaka", "", 2, 1);
-INSERT INTO profils (firstname, lastname, src, localisation_id, user_id)
+
+INSERT INTO
+    profils (
+        firstname,
+        lastname,
+        src,
+        localisation_id,
+        user_id
+    )
 VALUES ("Marta", "LePanda", "", 3, 2);
 
 CREATE TABLE
@@ -103,7 +126,7 @@ CREATE TABLE
         CONSTRAINT fk_localisation_id FOREIGN KEY (localisation_id) REFERENCES localisations(id) ON DELETE CASCADE
     ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
-CREATE TABLE 
+CREATE TABLE
     faqs (
         id int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
         question varchar(255) NOT NULL,
@@ -180,7 +203,30 @@ INSERT INTO
     )
 VALUES ("HC", 0, 90, "Blue"), ("C", 90, 165, "Vert"), ("B", 165, 255, "Jaune"), ("A", 255, 375, "Orange"), ("Premium", 375, 495, "Red");
 
-INSERT INTO faqs (question, answer) VALUES ("Question 1", "Answer 1");
-INSERT INTO faqs (question, answer) VALUES ("Question 2", "Answer 2");
-INSERT INTO faqs (question, answer) VALUES ("Question 3", "Answer 3");
-INSERT INTO faqs (question, answer) VALUES ("Question 4", "Answer 4");
+INSERT INTO
+    faqs (question, answer)
+VALUES (
+        "Est-il possible d'etre payé en étant bénévole sachant que je suis en 39h par semaine ?",
+        "Ce que tu donnes, dieu te le rendra, mais pas en salaire."
+    );
+
+INSERT INTO
+    faqs (question, answer)
+VALUES (
+        "Est ce du vol si je récupère un portable que personne n'achete ?",
+        "Bien sur, des poursuites pourront être menées pour ça."
+    );
+
+INSERT INTO
+    faqs (question, answer)
+VALUES (
+        "N'est ce pas honteux de vendre des téléphones de mauvaises qualités, style apple, aux gens démunis ?",
+        "Complétement c'est pourquoi nous recommendons aux pauvres les autres marques."
+    );
+
+INSERT INTO
+    faqs (question, answer)
+VALUES (
+        "Ou va l'argent suite aux ventes de portables ?",
+        "Dans les poches du grand patron."
+    );

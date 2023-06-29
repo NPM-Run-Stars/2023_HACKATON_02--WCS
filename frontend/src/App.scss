@@ -1,0 +1,201 @@
+@import "./components/Variables.scss";
+@import "./pages/Signin/Signin.scss";
+@import "./pages/Intro_2/PageIntro2.scss";
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+button {
+  font-size: calc(10px + 2vmin);
+}
+
+.main-titel {
+  @include mainTitle($green);
+}
+
+.label-title {
+  @include labelTitle($green);
+}
+
+.main-btn {
+  @include mainBtn($green);
+}
+
+button.main-btn:hover {
+  @include mainBtnHover($red);
+}
+
+.label-title {
+  @include label-title;
+}
+
+.form-container {
+  @include form-container;
+}
+
+.form-container label {
+  @include form-container-label;
+}
+
+.basic-input {
+  @include basic-input($green);
+}
+
+.basic-input:hover {
+  @include basic-input-hover($green);
+}
+
+.option-list {
+  @include option-list($green);
+}
+
+.radio-list {
+  @include radio-list;
+}
+
+.radio-label {
+  @include radio-label;
+}
+
+input[type="radio"]:checked::before {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  background-color: #ca8489;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: appear 0.8s;
+}
+
+.radio-container {
+  background-color: #f6f7f8;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 0.8rem;
+}
+
+fieldset {
+  border-style: none;
+  border-color: none;
+  border-image: initial;
+}
+
+.radio-legende {
+  @include legend-title;
+}
+
+.box select {
+  background-color: #f2f2f3;
+  color: $background-black;
+  border-bottom: 5px solid $green;
+  padding: 12px;
+  width: 250px;
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+  border-radius: 10px;
+  width: 400px;
+}
+
+.box::before {
+  content: "\f13a";
+  font-family: $title-font-family;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  font-size: 28px;
+  line-height: 45px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.box:hover::before {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.box select option {
+  padding: 30px;
+}
+
+.error {
+  @include error;
+}
+
+.robot {
+  @include robot;
+}
+
+.redirection {
+  @include mainBtn($dark-blue);
+}
+
+.error-title {
+  @include mainTitle($dark-blue);
+}
+
+@media screen {
+}

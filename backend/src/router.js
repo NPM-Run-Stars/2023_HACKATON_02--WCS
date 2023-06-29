@@ -11,6 +11,7 @@ const ramsControllers = require("./controllers/ramsControllers");
 const storagesControllers = require("./controllers/storagesControllers");
 const casesControllers = require("./controllers/casesControllers");
 const screensControllers = require("./controllers/screensControllers");
+const profileControllers = require("./controllers/profileControllers");
 
 const { hashPassword } = require("./services/auth");
 const { checkUserData } = require("./services/checkUserData");
@@ -19,6 +20,8 @@ const { checkUser, checkAdmin } = require("./services/jwt");
 router.post("/signin", checkUserData, authControllers.signin);
 
 router.use(checkUser);
+router.get("/profile/:id", profileControllers.findUser);
+router.put("/profile", profileControllers.editUserbyId);
 router.get("/brands", brandsControllers.browse);
 router.get("/brands/:brand", brandsControllers.read);
 router.get("/models", mobileModelsControllers.browse);
