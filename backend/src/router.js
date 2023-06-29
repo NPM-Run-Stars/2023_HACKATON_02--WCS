@@ -54,5 +54,4 @@ router.put("/storages/:id", storagesControllers.edit);
 router.post("/storages", storagesControllers.add);
 router.delete("/storages/:id", storagesControllers.destroy);
 
-
 module.exports = router;

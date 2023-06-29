@@ -19,7 +19,7 @@ CREATE TABLE
 
 
 INSERT INTO users (email, password, role) VALUES ("admin@admin.com", "admin123", "admin");
-INSERT INTO users (email, password, role) VALUES ("user@user.com", "user123");
+INSERT INTO users (email, password) VALUES ("user@user.com", "user123");
 
 INSERT INTO profils (firstname, lastname, src, localisation_id, user_id)
 VALUES ("Lucas", "LeBaka", "", 2, 1);
@@ -110,7 +110,7 @@ CREATE TABLE
         answer varchar(255) NOT NULL
     ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
-INSERT INTO brands(name) VALUES ('Iphone'), ('Samsung'), ('Xiaomi');
+INSERT INTO brands(brand) VALUES ('Iphone'), ('Samsung'), ('Xiaomi');
 
 INSERT INTO
     mobile_models(model, brand_id)
