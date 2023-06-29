@@ -2,15 +2,13 @@ import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import connexion from "../../services/connexion";
 
-function PutInformations() {
+function PutInformations({ handlePhone, handleValue }) {
   const [AllBrands, setAllBrands] = useState([]);
   const [AllModels, setAllModels] = useState([]);
   const [AllRams, setAllRams] = useState([]);
   const [AllStorages, setAllStorages] = useState([]);
-  // const [PhoneBrand, setPhoneBrand] =useState("") ;
   const [searchParams, setSearchParams] = useSearchParams({});
 
-  // const [AllModels, setAllModels] = useState([]);
   const getBrands = async () => {
     try {
       const brands = await connexion.get("/brands");
@@ -65,7 +63,13 @@ function PutInformations() {
   return (
     <>
       <h1>Renseignez les informations du téléphone</h1>
-      <select name="brand" onChange={(e) => handleBrand(e.target.value)}>
+      <select
+        name="brand"
+        onChange={(e) => {
+          handleBrand(e.target.value);
+          handlePhone(e.target.name, e.target.value);
+        }}
+      >
         <option value="">Selectionnez la marque</option>
         {AllBrands.map((brand) => (
           <option value={brand.brand} key={brand.id}>
@@ -74,7 +78,10 @@ function PutInformations() {
         ))}
       </select>
 
-      <select name="model">
+      <select
+        name="model"
+        onChange={(e) => handlePhone(e.target.name, e.target.value)}
+      >
         <option value="">Selectionnez le modèle</option>
         {AllModels.map((model) => (
           <option value={model.model} key={model.id}>
@@ -83,19 +90,25 @@ function PutInformations() {
         ))}
       </select>
 
-      <select name="ram">
+      <select
+        name="value_ram"
+        onChange={(e) => handleValue(e.target.name, e.target.value)}
+      >
         <option value="">Quelle est la RAM?</option>
         {AllRams.map((ram) => (
-          <option value={ram.property_ram} key={ram.id}>
+          <option value={ram.value_ram} key={ram.id}>
             {ram.property_ram}
           </option>
         ))}
       </select>
 
-      <select name="storage">
+      <select
+        name="value_storage"
+        onChange={(e) => handleValue(e.target.name, e.target.value)}
+      >
         <option value="">Quelle est la capacité de la mémoire?</option>
         {AllStorages.map((storage) => (
-          <option value={storage.property_storage} key={storage.id}>
+          <option value={storage.value_storage} key={storage.id}>
             {storage.property_storage}
           </option>
         ))}
