@@ -24,7 +24,7 @@ function App() {
         <Routes>
           {/* SACHA */}
           <Route path="/login" element={<Signin />} />
-            <Route path="/signup" element={<Signup />} />
+          <Route path="/signup" element={<Signup />} />
 
           <Route path="/" element={<UserLayout />}>
             <Route path="" element={<UserHome />} />
