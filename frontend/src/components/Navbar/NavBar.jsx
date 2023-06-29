@@ -44,7 +44,7 @@ function NavBar() {
                 <Link to="/admin" className="menu-item">
                   Accessoire
                 </Link>
-                <Link to="/admin/signup" className="menu-item">
+                <Link to="/admin/profil" className="menu-item">
                   Utilisateur
                 </Link>
               </>
