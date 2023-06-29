@@ -11,6 +11,13 @@ class ProfilsManager extends AbstractManager {
     ]);
   }
 
+  EditUserById(profil) {
+    return this.database.query(
+      `update ${this.table} set firstname = ?, lastname = ?, src = ? where id = ?`,
+      [profil.firstname, profil.lastname, profil.src, profil.id]
+    );
+  }
+
   findUser(id) {
     return this.database.query(
       `select firstname from ${this.table} where user_id = ?`,
