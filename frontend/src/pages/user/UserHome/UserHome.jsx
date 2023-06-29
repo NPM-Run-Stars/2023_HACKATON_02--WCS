@@ -1,7 +1,13 @@
 import React from "react";
+import Faq from "../../Faq";
 
 function Home() {
-  return <div>Home</div>;
+  return (
+    <>
+      <div>AdminPage</div>
+      <Faq />
+    </>
+  );
 }
 
 export default Home;
