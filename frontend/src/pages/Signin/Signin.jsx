@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { toast, ToastContainer } from "react-toastify";
+import { toast, ToastContainer, Flip } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import connexion from "../../services/connexion";
 import { useCurrentUser } from "../../contexts/AuthContexts";
@@ -101,6 +101,8 @@ function Signin() {
             position="top-center"
             draggable
             pauseOnHover
+            transition={Flip}
+            toastClassName="custom-toast"
           />
         </div>
       </form>

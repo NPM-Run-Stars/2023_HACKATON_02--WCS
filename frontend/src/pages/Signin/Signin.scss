@@ -5,3 +5,8 @@
 .main-btn-red {
   @include mainBtn($red);
 }
+
+.custom-toast {
+  font-size: 16px;
+  height: 130px;
+}
