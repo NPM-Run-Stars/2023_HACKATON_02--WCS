@@ -30,7 +30,7 @@ function App() {
           </Route>
           <Route path="/admin" element={<AdminLayout />}>
             <Route path="" element={<AdminHome />} />
-            <Route path="/signup" element={<Signup />} />
+            <Route path="signup" element={<Signup />} />
           </Route>
           {/* CYRIELLE */}
 
