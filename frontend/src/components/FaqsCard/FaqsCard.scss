@@ -1,0 +1,25 @@
+.question {
+  background-color: #23a2cb;
+  font-family: "Sary Soft Regular", sans-serif;
+  border-radius: 0.5rem;
+  color: #ffffff;
+  border: none;
+  width: 60%;
+  margin-top: 2rem;
+}
+
+#reponse {
+  font-family: "Lato", sans-serif;
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+button {
+  transition-duration: 0.4s;
+}
+
+.question:hover {
+  background-color: white;
+  color: #23a2cb;
+  border: 0.01rem solid #23a2cb;
+}

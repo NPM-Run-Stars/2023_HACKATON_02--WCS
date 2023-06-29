@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import connexion from "../../../services/connexion";
-import "./Profil.scss";
 
 function Profil() {
   const params = useParams();
@@ -15,7 +14,6 @@ function Profil() {
       console.error(err);
     }
   };
-
   useEffect(() => {
     getProfil();
   }, []);
@@ -42,7 +40,7 @@ function Profil() {
   };
 
   return (
-    <div>
+    <div className="profil-container">
       {profil[0].src ? (
         <img src={profil[0].src} alt="profil de l'utilisateur" />
       ) : (
@@ -51,35 +49,46 @@ function Profil() {
           alt="profil de l'utilisateur"
         />
       )}
-
       <form>
-        <label htmlFor="firstname">Prénom</label>
+        <label htmlFor="firstname" className="label-title">
+          Prénom
+        </label>
         <input
           type="text"
           value={profil[0]?.firstname || ""}
           onChange={handleUser}
           name="firstname"
+          className="basic-input formEntry animated"
           required
         />
 
-        <label htmlFor="lastname">Nom</label>
+        <label htmlFor="lastname" className="label-title">
+          Nom
+        </label>
         <input
           type="text"
           value={profil[0]?.lastname || ""}
           onChange={handleUser}
           name="lastname"
+          className="basic-input formEntry animated"
           required
         />
-        <label htmlFor="src">Photo de profil</label>
+        <label htmlFor="src" className="label-title">
+          Photo de profil
+        </label>
         <input
           type="text"
           value={profil[0] ? profil[0].src : ""}
           onChange={handleUser}
           name="src"
+          className="basic-input formEntry animated"
           required
         />
-
-        <button type="button" onClick={(event) => UpdateProfil(event)}>
+        <button
+          type="button"
+          className="main-btn profil-btn"
+          onClick={(event) => UpdateProfil(event)}
+        >
           Mettre a jour le profil
         </button>
       </form>
