@@ -7,6 +7,5 @@
 }
 
 .custom-toast {
-  font-size: 16px;
-  height: 130px;
+  @include toastNotif;
 }

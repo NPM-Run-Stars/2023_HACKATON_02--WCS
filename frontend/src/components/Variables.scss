@@ -81,6 +81,10 @@ $base-font-script: "Damion";
   transition: ease 0.5s;
 }
 
+@mixin toastNotif {
+  height: 120px;
+}
+
 @mixin form-container-label {
   display: flex;
   flex-direction: column;
