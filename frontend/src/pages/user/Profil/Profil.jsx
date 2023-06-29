@@ -14,7 +14,6 @@ function Profil() {
       console.error(err);
     }
   };
-
   useEffect(() => {
     getProfil();
   }, []);

@@ -123,5 +123,4 @@ function PageEtape3() {
     </div>
   );
 }
-
 export default PageEtape3;

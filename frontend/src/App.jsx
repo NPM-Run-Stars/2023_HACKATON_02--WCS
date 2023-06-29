@@ -51,7 +51,10 @@ function App() {
           <Route path="*" element={<Error />} />
         </Routes>
       </Router>
+
+      {/* page intro */}
       <PageIntro2 />
+      {/* page etape3 */}
       <PageEtape3 />
     </div>
   );
