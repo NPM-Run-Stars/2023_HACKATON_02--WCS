@@ -15,6 +15,7 @@ import Error from "./Error";
 
 /* MARTA */
 import PageIntro2 from "./pages/Intro_2/PageIntro2";
+import PageEtape3 from "./pages/PageEtape3/PageEtape3";
 /* ROBIN */
 
 /* LUCAS */
@@ -52,7 +53,11 @@ function App() {
           <Route path="*" element={<Error />} />
         </Routes>
       </Router>
+
+      {/* page intro */}
       <PageIntro2 />
+      {/* page etape3 */}
+      <PageEtape3 />
     </div>
   );
 }
