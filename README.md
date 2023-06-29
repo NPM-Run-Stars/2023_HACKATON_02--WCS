@@ -1,3 +1,8 @@
+Stash & Merge Corporation present
+</br>
+</br>
+
+
 🧰 Languages & Frameworks used :
 
 [![My Skills](https://skills.thijs.gg/icons?i=js,html,css,react,mysql,nodejs)](https://skills.thijs.gg)
