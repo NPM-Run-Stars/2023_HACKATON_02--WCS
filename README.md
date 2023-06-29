@@ -4,4 +4,4 @@ HTMLCSSJavaScriptNodeJSReactJSTailwindCSS
 
 
 🖥️ Software & Tools used :
-Visual Studio CodeGitBashGitHub DesktopFigmaDiscord
+Visual Studio Code Git GitHub DesktopFigmaDiscord
