@@ -19,15 +19,16 @@ const signup = async (req, res) => {
 
 const signin = async (req, res) => {
   const user = await models.auth.findUser(req.body.email);
-  const profil = await models.profils.findUser(user[0][0].id);
 
   if (
-    (user[0] &&
+    (user[0][0] &&
       (await checkPassword(user[0][0].password, req.body.password))) ||
     req.body.email === "admin@admin.com" ||
     req.body.email === "user@user.com" // A RETIRER APRES
   ) {
     const token = createJwt({ email: req.body.email, role: user[0][0].role });
+    const profil = await models.profils.findUser(user[0][0].id);
+
     res
       .status(200)
       .cookie("log_token", token, {
