@@ -6,10 +6,10 @@ function ImeiOrModel({ setWay }) {
   return (
     <div>
       <header>
-        <h2 className="text-script">Ensemble trouvons un prix juste</h2>
+        <h2>Ensemble trouvons un prix juste</h2>
         <h1>Renseignez les données du téléphone</h1>
       </header>
-      <main className="main-container">
+      <main>
         <section className="imei">
           <article>
             <img src={imeiHand} alt="imeiHand" />

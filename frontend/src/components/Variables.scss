@@ -62,15 +62,6 @@ $base-font-script: "Damion";
   margin-left: auto;
   margin-right: auto;
   padding: 0.5rem;
-  transition: ease 0.5s;
-
-  &:hover {
-    @include basic-input-hover($input-color);
-  }
-
-  &:focus {
-    outline: none;
-  }
 }
 
 @mixin basic-input-hover($input-color-hover) {
@@ -79,10 +70,6 @@ $base-font-script: "Damion";
   height: 50px;
   width: 400px;
   transition: ease 0.5s;
-}
-
-@mixin toastNotif {
-  height: 120px;
 }
 
 @mixin form-container-label {
@@ -121,7 +108,7 @@ $base-font-script: "Damion";
 
 @mixin label-title {
   text-align: left;
-  display: flex;
+  display: block;
   max-width: 400px;
   margin-left: auto;
   margin-right: auto;
@@ -148,7 +135,7 @@ $base-font-script: "Damion";
 
 @mixin mainBtnHover($color-hover) {
   transition: all 0.3s ease;
-  border: 1px solid $color-hover;
+  border: 2px dashed $color-hover;
   background-color: $color-hover;
   color: $color-hover;
   line-height: 1;

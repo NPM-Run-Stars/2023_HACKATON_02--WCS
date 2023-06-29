@@ -1,5 +1,5 @@
 import React from "react";
-import AbbePierre from "../../assets/abbe-pierre.png";
+import AbbePierre from "../../assets/Abbe-Pierre.png";
 
 function PageIntro2() {
   return (
