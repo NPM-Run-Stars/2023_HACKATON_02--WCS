@@ -28,6 +28,7 @@ function App() {
 
           <Route path="/" element={<UserLayout />}>
             <Route path="" element={<UserHome />} />
+            <Route path="form" element={<Form />} />
           </Route>
           <Route path="/admin" element={<AdminLayout />}>
             <Route path="" element={<AdminHome />} />
@@ -40,7 +41,6 @@ function App() {
           {/* ROBIN */}
 
           {/* LUCAS */}
-          <Route path="/form" element={<Form />} />
         </Routes>
       </Router>
 
