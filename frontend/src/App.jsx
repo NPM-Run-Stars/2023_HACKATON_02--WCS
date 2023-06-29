@@ -6,6 +6,7 @@ import UserLayout from "./pages/user/UserLayout";
 import AdminLayout from "./pages/admin/AdminLayout";
 import UserHome from "./pages/user/UserHome/UserHome";
 import AdminHome from "./pages/admin/AdminHome/AdminHome";
+import Profil from "./pages/user/Profil/Profil";
 import Gabarit from "./components/Gabarit";
 
 /* CYRIELLE */
@@ -31,6 +32,7 @@ function App() {
 
           <Route path="/" element={<UserLayout />}>
             <Route path="" element={<UserHome />} />
+            <Route path="/profil/:id" element={<Profil />} />
           </Route>
           <Route path="/admin" element={<AdminLayout />}>
             <Route path="" element={<AdminHome />} />

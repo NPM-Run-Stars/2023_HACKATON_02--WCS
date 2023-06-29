@@ -1,13 +1,10 @@
 import React from "react";
-import Faq from "../../Faq";
+import { useCurrentUser } from "../../../contexts/AuthContexts";
 
 function AdminHome() {
-  return (
-    <>
-      <div>AdminPage</div>
-      <Faq />
-    </>
-  );
+  const { user } = useCurrentUser();
+
+  return <div>{user.firstname}</div>;
 }
 
 export default AdminHome;
