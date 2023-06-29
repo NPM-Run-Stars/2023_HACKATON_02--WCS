@@ -11,20 +11,51 @@ function Form() {
   const [page, setPage] = useState(0);
   const [way, setWay] = useState("");
 
+  const [phone, setPhone] = useState({
+    id: null,
+    brand: "",
+    model: "",
+  });
+
+  const [phoneValue, setPhoneValue] = useState({
+    value_ram: 0,
+    value_storage: 0,
+    value_screen: 0,
+    value_case: 0,
+  });
+
+  const handlePhone = (name, value) => {
+    setPhone({ ...phone, [name]: value });
+  };
+
+  const handleValue = (name, value) => {
+    setPhoneValue({ ...phoneValue, [name]: value });
+  };
+
   const pageDisplay = () => {
     if (page === 0) {
       return <ImeiOrModel setWay={setWay} />;
     }
     if (page === 1 && way === "model") {
-      return <PutInformations />;
+      return (
+        <PutInformations handlePhone={handlePhone} handleValue={handleValue} />
+      );
     }
     if (page === 1 && way === "imei") {
-      return <ImeiInformations />;
+      return (
+        <ImeiInformations handlePhone={handlePhone} handleValue={handleValue} />
+      );
     }
     if (page === 2) {
-      return <RecapModel />;
+      return (
+        <RecapModel
+          phone={phone}
+          phoneValue={phoneValue}
+          handleValue={handleValue}
+        />
+      );
     }
-    return <PriceModel />;
+    return <PriceModel phoneValue={phoneValue} />;
   };
   return (
     <div className="form">
