@@ -36,6 +36,7 @@ const signin = async (req, res) => {
       })
       .json({
         role: user[0][0].role,
+        id: user[0][0].id,
         firstname: profil[0][0].firstname,
         msg: "Connexion réussit, redirection dans 5 secondes",
       });
