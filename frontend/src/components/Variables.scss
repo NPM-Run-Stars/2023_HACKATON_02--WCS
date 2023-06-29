@@ -219,3 +219,22 @@ $base-font-script: "Lato", sans-serif;
     background-color: #ca8489;
   }
 }
+
+@mixin error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $white;
+  font-weight: 300;
+  font-size: 1.1rem;
+  font-weight: 400;
+  font-family: $title-font-family;
+  height: 100svh;
+}
+
+@mixin robot {
+  width: 100vw;
+  height: 50vh;
+  max-width: 50vh;
+}

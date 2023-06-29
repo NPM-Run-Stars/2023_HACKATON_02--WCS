@@ -179,3 +179,22 @@ fieldset {
 .box select option {
   padding: 30px;
 }
+
+.error {
+  @include error;
+}
+
+.robot {
+  @include robot;
+}
+
+.redirection {
+  @include mainBtn($dark-blue);
+}
+
+.error-title {
+  @include mainTitle($dark-blue);
+}
+
+@media screen {
+}
