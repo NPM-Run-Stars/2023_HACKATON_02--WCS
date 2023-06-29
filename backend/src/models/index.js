@@ -30,46 +30,57 @@ pool.getConnection().catch(() => {
 const models = {};
 
 const ItemManager = require("./ItemManager");
+
 models.item = new ItemManager();
 models.item.setDatabase(pool);
 
 const AuthManager = require("./AuthManager");
+
 models.auth = new AuthManager();
 models.auth.setDatabase(pool);
 
 const ProfilsManager = require("./ProfilsManager");
+
 models.profils = new ProfilsManager();
 models.profils.setDatabase(pool);
 
 const LocalisationManager = require("./LocalisationManager");
+
 models.localisations = new LocalisationManager();
 models.localisations.setDatabase(pool);
 
 const BrandsManager = require("./BrandsManager");
+
 models.brands = new BrandsManager();
 models.brands.setDatabase(pool);
 
 const MobileModelsManager = require("./MobileModelsManager");
+
 models.mobileModels = new MobileModelsManager();
 models.mobileModels.setDatabase(pool);
 
 const FaqsManager = require("./FaqsManager");
+
 models.faqs = new FaqsManager();
 models.faqs.setDatabase(pool);
 
 const RamsManager = require("./RamsManager");
+
 models.rams = new RamsManager();
 models.rams.setDatabase(pool);
 
 const StoragesManager = require("./StoragesManager");
+
 models.storages = new StoragesManager();
 models.storages.setDatabase(pool);
 
 const CasesManager = require("./CasesManager");
+
 models.cases = new CasesManager();
 models.cases.setDatabase(pool);
 
 const ScreensManager = require("./ScreensManager");
+
 models.screens = new ScreensManager();
 models.screens.setDatabase(pool);
 
