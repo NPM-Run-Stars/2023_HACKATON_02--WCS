@@ -84,10 +84,10 @@ function Profil() {
           className="basic-input formEntry animated"
           required
         />
-        <button 
+        <button
           type="button"
           className="main-btn profil-btn"
-          onClick={(event) =>
+          onClick={(event) => 
           UpdateProfil(event)}>
           Mettre a jour le profil
         </button>
