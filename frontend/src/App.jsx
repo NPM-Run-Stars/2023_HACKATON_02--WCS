@@ -9,6 +9,7 @@ import AdminHome from "./pages/admin/AdminHome/AdminHome";
 import Profil from "./pages/user/Profil/Profil";
 import Faq from "./pages/user/Faq/Faq";
 import Gabarit from "./components/Gabarit";
+import Error from "./Error";
 
 /* CYRIELLE */
 
@@ -48,6 +49,7 @@ function App() {
           {/* ROBIN */}
 
           {/* LUCAS */}
+          <Route path="*" element={<Error />} />
         </Routes>
       </Router>
       <Gabarit />
