@@ -14,6 +14,7 @@ import Error from "./Error";
 
 /* MARTA */
 import PageIntro2 from "./pages/Intro_2/PageIntro2";
+import PageEtape3 from "./pages/PageEtape3/PageEtape3";
 /* ROBIN */
 
 /* LUCAS */
@@ -51,6 +52,7 @@ function App() {
         </Routes>
       </Router>
       <PageIntro2 />
+      <PageEtape3 />
     </div>
   );
 }
