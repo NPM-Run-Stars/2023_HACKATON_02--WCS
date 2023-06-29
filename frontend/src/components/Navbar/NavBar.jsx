@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCurrentUser } from "../../contexts/AuthContexts";
-import "./NavBar.scss";
 
 function NavBar() {
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
@@ -33,9 +32,6 @@ function NavBar() {
             <Link to="/faq" className="menu-item">
               F.A.Q
             </Link>
-            <Link to="/" className="menu-item">
-              Paramètre
-            </Link>
             <Link to="/form" className="menu-item">
               Formulaire
             </Link>
@@ -58,7 +54,7 @@ function NavBar() {
               Paramètre
             </Link>
 
-            <button type="button" onClick={logout}>
+            <button type="button" className="deconnexion" onClick={logout}>
               Déconnexion
             </button>
           </li>

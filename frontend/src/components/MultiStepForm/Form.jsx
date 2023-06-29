@@ -30,7 +30,7 @@ function Form() {
     <div className="form">
       <div className="progressbar">
         <h2>Progress Bar</h2>
-        <div className="form-container">
+        <div className="bouton-container">
           <div className="main-container">{pageDisplay()} </div>
           <div className="button-container">
             {way && (
