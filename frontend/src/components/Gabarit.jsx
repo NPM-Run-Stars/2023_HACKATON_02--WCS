@@ -14,7 +14,7 @@ function Gabarit() {
           <label className="label-title" htmlFor="">
             Titre
             <input
-              className="basic-input formEntry animated"
+              className="basic-input animated"
               type="text"
               required
               minLength={1}
