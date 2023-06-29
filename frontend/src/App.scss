@@ -1,9 +1,11 @@
 @import "./components/Variables.scss";
 @import "./components/Navbar/NavBar.scss";
+@import "./components/ProgressBar.scss";
 @import "./pages/Signin/Signin.scss";
 @import "./pages/Intro_2/PageIntro2.scss";
 @import "./pages/user/Profil/Profil.scss";
 @import "./pages/PageEtape3/PageEtape3.scss";
+@import "./pages/PageEtape4/PageEtape4.scss";
 
 body {
   margin: 0;
