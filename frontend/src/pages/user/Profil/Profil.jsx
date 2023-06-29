@@ -30,10 +30,10 @@ function Profil() {
     setProfil([updatedProfile]);
   };
 
-  const login = async (event) => {
+  const UpdateProfil = async (event) => {
     event.preventDefault();
     try {
-      await connexion.put(`/profile`, profil);
+      await connexion.put(`/profile/update`, profil);
     } catch (err) {
       console.error(err);
     }
@@ -84,11 +84,7 @@ function Profil() {
           className="basic-input formEntry animated"
           required
         />
-        <button
-          type="button"
-          className="main-btn profil-btn"
-          onClick={(event) => login(event)}
-        >
+        <button type="button" className="main-btn profil-btn" onClick={(event) => UpdateProfil(event)}>
           Mettre a jour le profil
         </button>
       </form>

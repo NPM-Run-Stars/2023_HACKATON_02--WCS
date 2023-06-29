@@ -18,6 +18,46 @@ class ProfilsManager extends AbstractManager {
     );
   }
 
+  AdminEditUserById(profil, id) {
+    return this.database.query(
+      `UPDATE profils p JOIN users u ON p.user_id = u.id
+      SET p.firstname = ?,
+          p.lastname = ?,
+          p.src = ?,
+          p.localisation_id = ?,
+          u.email = ?
+      WHERE p.id = ?;`,
+      [
+        profil.firstname,
+        profil.lastname,
+        profil.src,
+        profil.localisation_id,
+        profil.email,
+        id,
+      ]
+    );
+  }
+
+  getUser() {
+    return this.database.query(
+      `SELECT p.firstname, p.id, p.lastname, p.src, l.place
+      FROM ${this.table} p
+      JOIN localisations l ON p.localisation_id = l.id;`,
+      []
+    );
+  }
+
+  getUserAllinfo(id) {
+    return this.database.query(
+      `SELECT p.firstname, p.lastname, p.localisation_id, p.src, u.email, l.place
+      FROM ${this.table} p
+      JOIN users u ON p.user_id = u.id
+      JOIN localisations l ON p.localisation_id = l.id
+      WHERE p.id = ?;`,
+      [id]
+    );
+  }
+
   findUser(id) {
     return this.database.query(
       `select firstname from ${this.table} where user_id = ?`,
