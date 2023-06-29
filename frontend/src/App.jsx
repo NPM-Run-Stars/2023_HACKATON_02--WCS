@@ -12,7 +12,7 @@ import Gabarit from "./components/Gabarit";
 /* CYRIELLE */
 
 /* MARTA */
-
+import PageIntro2 from "./pages/Intro_2/PageIntro2";
 /* ROBIN */
 
 /* LUCAS */
@@ -49,6 +49,7 @@ function App() {
         </Routes>
       </Router>
       <Gabarit />
+      <PageIntro2 />
     </div>
   );
 }
