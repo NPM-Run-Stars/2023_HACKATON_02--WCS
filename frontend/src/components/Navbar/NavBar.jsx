@@ -36,6 +36,9 @@ function NavBar() {
             <Link to="/" className="menu-item">
               Paramètre
             </Link>
+            <Link to="/form" className="menu-item">
+              InputForm
+            </Link>
 
             {user === "admin" && (
               <>

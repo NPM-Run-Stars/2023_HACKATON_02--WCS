@@ -6,7 +6,6 @@ import UserLayout from "./pages/user/UserLayout";
 import AdminLayout from "./pages/admin/AdminLayout";
 import UserHome from "./pages/user/UserHome/UserHome";
 import AdminHome from "./pages/admin/AdminHome/AdminHome";
-import Gabarit from "./components/Gabarit";
 
 /* CYRIELLE */
 
@@ -28,6 +27,7 @@ function App() {
 
           <Route path="/" element={<UserLayout />}>
             <Route path="" element={<UserHome />} />
+            <Route path="form" element={<Form />} />
           </Route>
           <Route path="/admin" element={<AdminLayout />}>
             <Route path="" element={<AdminHome />} />
@@ -40,11 +40,8 @@ function App() {
           {/* ROBIN */}
 
           {/* LUCAS */}
-          <Route path="/form" element={<Form />} />
         </Routes>
       </Router>
-
-      <Gabarit />
     </div>
   );
 }
