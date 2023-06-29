@@ -33,6 +33,12 @@ function NavBar() {
             <Link to="/faq" className="menu-item">
               F.A.Q
             </Link>
+            <Link to="/" className="menu-item">
+              Paramètre
+            </Link>
+            <Link to="/form" className="menu-item">
+              Formulaire
+            </Link>
 
             {user.role === "admin" && (
               <>
