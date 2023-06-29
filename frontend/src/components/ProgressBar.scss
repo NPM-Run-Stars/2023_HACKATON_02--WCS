@@ -34,9 +34,6 @@
   z-index: -1;
 }
 
-// .progressbar li:first-child:after {
-//     content: none;
-// }
 .progressbar li.active:before {
   background-color: $green;
   color: white;
