@@ -85,9 +85,10 @@ function Profil() {
           required
         />
         <button 
-          type="button" 
-          className="main-btn profil-btn" 
-          onClick={(event) => UpdateProfil(event)}>
+          type="button"
+          className="main-btn profil-btn"
+          onClick={(event) =>
+          UpdateProfil(event)}>
           Mettre a jour le profil
         </button>
       </form>
