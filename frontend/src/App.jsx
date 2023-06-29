@@ -15,7 +15,7 @@ import Gabarit from "./components/Gabarit";
 /* ROBIN */
 
 /* LUCAS */
-
+import Form from "./components/MultiStepForm/Form";
 import "./App.css";
 
 function App() {
@@ -40,6 +40,7 @@ function App() {
           {/* ROBIN */}
 
           {/* LUCAS */}
+          <Route path="/form" element={<Form />} />
         </Routes>
       </Router>
 
