@@ -1,4 +1,30 @@
--- SQLBook: Code
+CREATE TABLE
+    users(
+        `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+        `email` VARCHAR(80) UNIQUE,
+        `password` LONGTEXT,
+        `role` VARCHAR(10) DEFAULT 'user'
+    );
+
+CREATE TABLE
+    profils(
+        `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+        `firstname` VARCHAR(80),
+        `lastname` VARCHAR(80),
+        `src` VARCHAR(255),
+        `localisation_id` VARCHAR(80),
+        `user_id` INT,
+        CONSTRAINT fk_user_id FOREIGN KEY (user_id) REFERENCES users(id)
+    );
+
+
+INSERT INTO users (email, password, role) VALUES ("admin@admin.com", "admin123", "admin");
+INSERT INTO users (email, password, role) VALUES ("user@user.com", "user123");
+
+INSERT INTO profils (firstname, lastname, src, localisation_id, user_id)
+VALUES ("Lucas", "LeBaka", "", 2, 1);
+INSERT INTO profils (firstname, lastname, src, localisation_id, user_id)
+VALUES ("Marta", "LePanda", "", 3, 2);
 
 CREATE TABLE
     brands (

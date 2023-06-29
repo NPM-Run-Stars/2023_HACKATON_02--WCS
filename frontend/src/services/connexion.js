@@ -1,16 +1,37 @@
 const getData = (url) => {
-  return fetch(`${import.meta.env.VITE_BACKEND_URL}/${url}`)
+  return fetch(`${import.meta.env.VITE_BACKEND_URL}${url}`, {
+    credentials: "include",
+  })
     .then((res) => res.json())
     .catch((err) => console.error(err));
 };
 
 const postData = (url, body) => {
-  return fetch(`${import.meta.env.VITE_BACKEND_URL}/${url}`, {
-    method: "POST",
+  return fetch(`${import.meta.env.VITE_BACKEND_URL}${url}`, {
     body: JSON.stringify(body),
+    method: "POST",
+    credentials: "include",
     headers: {
-      "Content-Type": "application/json",
       Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  })
+    .then(async (res) =>
+      res.status === 401
+        ? { status: res.status }
+        : { data: await res.json(), status: res.status }
+    )
+    .catch((err) => console.error(err));
+};
+
+const updateData = (url, body) => {
+  return fetch(`${import.meta.env.VITE_BACKEND_URL}${url}`, {
+    body: JSON.stringify(body),
+    method: "PUT",
+    credentials: "include",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
     },
   })
     .then((res) => res.json())
@@ -18,21 +39,9 @@ const postData = (url, body) => {
 };
 
 const deleteData = (url) => {
-  return fetch(`${import.meta.env.VITE_BACKEND_URL}/${url}`, {
+  return fetch(`${import.meta.env.VITE_BACKEND_URL}${url}`, {
     method: "DELETE",
-  })
-    .then((res) => res.json())
-    .catch((err) => console.error(err));
-};
-
-const putData = (url, body) => {
-  return fetch(`${import.meta.env.VITE_BACKEND_URL}/${url}`, {
-    method: "PUT",
-    body: JSON.stringify(body),
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
+    credentials: "include",
   })
     .then((res) => res.json())
     .catch((err) => console.error(err));
@@ -41,7 +50,7 @@ const putData = (url, body) => {
 const connexion = {
   get: (url) => getData(url),
   post: (url, body) => postData(url, body),
-  put: (url, body) => putData(url, body),
+  put: (url, body) => updateData(url, body),
   delete: (url) => deleteData(url),
 };
 
