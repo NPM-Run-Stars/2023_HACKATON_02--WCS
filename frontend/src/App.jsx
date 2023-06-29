@@ -24,13 +24,13 @@ function App() {
         <Routes>
           {/* SACHA */}
           <Route path="/login" element={<Signin />} />
+            <Route path="/signup" element={<Signup />} />
 
           <Route path="/" element={<UserLayout />}>
             <Route path="" element={<UserHome />} />
           </Route>
           <Route path="/admin" element={<AdminLayout />}>
             <Route path="" element={<AdminHome />} />
-            <Route path="/signup" element={<Signup />} />
           </Route>
           {/* CYRIELLE */}
 
