@@ -30,7 +30,7 @@ function NavBar() {
             <Link to="/" className="menu-item">
               Accueil
             </Link>
-            <Link to="/" className="menu-item">
+            <Link to="/faq" className="menu-item">
               F.A.Q
             </Link>
 
