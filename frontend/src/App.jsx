@@ -16,10 +16,14 @@ import Gabarit from "./components/Gabarit";
 
 /* LUCAS */
 
+
 import "./App.scss";
 import "./assets/Fonts/sary-soft.soft-regular.otf";
 import "./assets/Fonts/sary-soft.soft-light.otf";
 import "./assets/Fonts/sary-soft.soft-semibold.otf";
+import Form from "./components/MultiStepForm/Form";
+
+
 
 function App() {
   return (
@@ -43,6 +47,7 @@ function App() {
           {/* ROBIN */}
 
           {/* LUCAS */}
+          <Route path="/form" element={<Form />} />
         </Routes>
       </Router>
 
