@@ -8,7 +8,6 @@ import UserHome from "./pages/user/UserHome/UserHome";
 import AdminHome from "./pages/admin/AdminHome/AdminHome";
 import Profil from "./pages/user/Profil/Profil";
 import Faq from "./pages/user/Faq/Faq";
-import Gabarit from "./components/Gabarit";
 import Error from "./Error";
 
 /* CYRIELLE */
@@ -31,7 +30,6 @@ function App() {
         <Routes>
           {/* SACHA */}
           <Route path="/login" element={<Signin />} />
-
           <Route path="/" element={<UserLayout />}>
             <Route path="" element={<UserHome />} />
             <Route path="form" element={<Form />} />
@@ -52,7 +50,6 @@ function App() {
           <Route path="*" element={<Error />} />
         </Routes>
       </Router>
-      <Gabarit />
       <PageIntro2 />
     </div>
   );
