@@ -53,41 +53,58 @@ function Signin() {
       console.error(err);
     }
   };
-
   return (
     <div>
+      <img
+        className="logo-connexion"
+        src="https://emmaus-connect.org/logo.svg"
+        alt="Logo Emmaus Connect"
+        width="300px"
+      />
       <form>
-        <input
-          type="email"
-          value={userSignin.email}
-          onChange={(event) => handleUser(event)}
-          name="email"
-          required
-        />
-        <label htmlFor="email">Email</label>
+        <h1 className="main-titel">Connexion</h1>
+        <div className="form-container">
+          <label htmlFor="email" className="label-title">
+            Email
+          </label>
+          <input
+            type="email"
+            value={userSignin.email}
+            onChange={(event) => handleUser(event)}
+            name="email"
+            className="basic-input animated"
+            required
+          />
 
-        <input
-          type="password"
-          value={userSignin.password}
-          onChange={(event) => handleUser(event)}
-          name="password"
-          required
-        />
-        <label htmlFor="password">Password</label>
+          <label htmlFor="password" className="label-title">
+            Password
+          </label>
+          <input
+            type="password"
+            value={userSignin.password}
+            onChange={(event) => handleUser(event)}
+            name="password"
+            className="basic-input-yellow animated"
+            required
+          />
 
-        <button type="button" onClick={(event) => login(event)}>
-          Signin
-        </button>
+          <button
+            type="button"
+            onClick={(event) => login(event)}
+            className="main-btn"
+          >
+            Signin
+          </button>
 
-        <ToastContainer
-          autoClose={5000}
-          position="top-center"
-          draggable
-          pauseOnHover
-        />
+          <ToastContainer
+            autoClose={5000}
+            position="top-center"
+            draggable
+            pauseOnHover
+          />
+        </div>
       </form>
     </div>
   );
 }
-
 export default Signin;

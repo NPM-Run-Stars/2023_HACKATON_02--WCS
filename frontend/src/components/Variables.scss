@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Jockey+One&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap%27");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Damion&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 
 @font-face {
   font-family: "Sary Soft Regular ";
@@ -28,7 +28,10 @@ $green: #00acb0;
 
 $title-font-family: "Sary Soft Regular", sans-serif;
 $title-font-family-bld: "Sary Soft Bold", sans-serif;
-$base-font-family: "Lato", sans-serif;
+$base-font-family: "Damion", cursive;
+$base-font-script: "Lato", sans-serif;
+
+/* FORM CONTAINER*/
 
 @mixin form-container {
   display: flex;
@@ -43,6 +46,8 @@ $base-font-family: "Lato", sans-serif;
   padding-top: 5px;
   padding-bottom: 5px;
 }
+
+/* FORM INPUT*/
 
 @mixin basic-input($input-color) {
   border: none;
