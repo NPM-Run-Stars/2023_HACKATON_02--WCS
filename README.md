@@ -3,6 +3,8 @@ Welcome to our Second Hackaton project in collaboration with Emmaüs Connect .
 Emmaüs Connect helps digitally isolated people by providing them services or digital equipment.
 Our team has been required to build an appplication to price smartphone they have been given.
 
+We had less than 72 hours including the presentation to deploy our project.
+
 </br>
 </br>
 
