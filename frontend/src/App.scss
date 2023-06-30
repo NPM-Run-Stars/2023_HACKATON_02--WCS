@@ -1,0 +1,132 @@
+@import "./components/Variables.scss";
+@import "./components/Navbar/NavBar.scss";
+@import "./components/ProgressBar.scss";
+@import "./pages/Signin/Signin.scss";
+@import "./pages/Intro_2/PageIntro2.scss";
+@import "./pages/user/Profil/Profil.scss";
+@import "./pages/user/PageEtape1/PageEtape1.scss";
+@import "./pages/user/PageEtape2/PageEtapes2.scss";
+@import "./pages/user/PageEtape3/PageEtape3.scss";
+@import "./pages/user/PageEtape4/PageEtape4.scss";
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Sary Soft Regular",
+    sans-serif, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+button {
+  font-size: calc(10px + 2vmin);
+}
+
+.main-titel {
+  @include mainTitle($green);
+}
+
+.label-title {
+  @include labelTitle($green);
+}
+
+.main-btn {
+  @include mainBtn($green);
+}
+
+button.main-btn:hover {
+  @include mainBtnHover($red);
+}
+
+.label-title {
+  @include label-title;
+}
+
+.form-container {
+  @include form-container;
+}
+
+.form-container label {
+  @include form-container-label;
+}
+
+.basic-input {
+  @include basic-input($green);
+}
+
+.basic-input:hover {
+  @include basic-input-hover($green);
+}
+
+.option-list {
+  @include option-list($green);
+}
+
+.radio-list {
+  @include radio-list;
+}
+
+.radio-label {
+  @include radio-label;
+}
+
+.error {
+  @include error;
+}
+
+.robot {
+  @include robot;
+}
+
+.redirection {
+  @include mainBtn($dark-blue);
+}
+
+.error-title {
+  @include mainTitle($dark-blue);
+}

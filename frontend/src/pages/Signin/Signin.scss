@@ -1,0 +1,11 @@
+.basic-input-yellow {
+  @include basic-input($yellow);
+}
+
+.main-btn-red {
+  @include mainBtn($red);
+}
+
+.custom-toast {
+  @include toastNotif;
+}

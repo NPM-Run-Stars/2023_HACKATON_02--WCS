@@ -1,53 +1,36 @@
-## Concept
+Welcome to our Second Hackaton project in collaboration with Emmaüs Connect .
 
-This template is meant to serve as a foundation for every P2/P3 following the React-Express-MySQL stack, as learned in Wild Code School.
-It's pre-configured with a set of tools which'll help students produce industry-quality and easier-to-maintain code, while staying as simple as possible to use.
+Emmaüs Connect helps digitally isolated people by providing them services or digital equipment.
+Our team has been required to build an appplication to price smartphone they have been given.
 
-## Setup & Use
+We had less than 72 hours including the presentation to deploy our project.
 
-### Windows users
+</br>
+</br>
 
-Be sure to run these commands in a git terminal to avoid [issues with newline formats](https://en.wikipedia.org/wiki/Newline#Issues_with_different_newline_formats):
 
-```
-git config --global core.eol lf
-git config --global core.autocrlf false
-```
+🧰 Languages & Frameworks used :
 
-### Project Initialization
+[![My Skills](https://skills.thijs.gg/icons?i=js,html,css,react,mysql,nodejs)](https://skills.thijs.gg)
 
-- In VSCode, install plugins **Prettier - Code formatter** and **ESLint** and configure them
-- Clone this repo, enter it
-- If you are using `yarn` or `pnpm`, adapt the `config/cli` in `package.json`
-- Run command `npm install`
-- _NB: To launch the backend server, you'll need an environment file with database credentials. You'll find a template one in `backend/.env.sample`_
 
-### Available Commands
 
-- `migrate` : Run the database migration script
-- `dev` : Starts both servers (frontend + backend) in one terminal
-- `dev-front` : Starts the React frontend server
-- `dev-back` : Starts the Express backend server
-- `lint` : Runs validation tools, and refuses unclean code (will be executed on every _commit_)
-- `fix` : Fixes linter errors (run it if `lint` growls on your code !)
+🖥️ Software & Tools used :
+<p>
+  <img align="left" alt="Visual Studio Code" style="padding-right:0.5rem;" src="https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?logo=visual-studio-code&logoColor=white"/>
+  <img align="left" alt="Git" style="padding-right:0.5rem;" src="https://img.shields.io/badge/Git-F05033.svg?logo=git&logoColor=white"/>
+  <img align="left" alt="Bash" style="padding-right:0.5rem;" src="https://img.shields.io/badge/Bash-4EAA25.svg?logo=gnu-bash&logoColor=white"/>
+  <img align="left" alt="GitHub Desktop" style="padding-right:0.5rem;" src="https://img.shields.io/badge/GitHub%20Desktop-8034A9.svg?logo=github&logoColor=white"/>
+  <img align="left" alt="Figma" style="padding-right:0.5rem;" src="https://img.shields.io/badge/-Figma-F24E1E.svg?logo=figma&logoColor=white"/>
+  <img align="left" alt="Discord" style="padding-right:0.5rem;" src="https://img.shields.io/badge/-Discord-5865F2.svg?logo=discord&logoColor=white"/>
+</p>
+</br>
+</br>
 
-## FAQ
+Team Devs
 
-### Tools
-
-- _Concurrently_ : Allows for several commands to run concurrently in the same CLI
-- _Husky_ : Allows to execute specific commands that trigger on _git_ events
-- _Vite_ : Alternative to _Create-React-App_, packaging less tools for a more fluid experience
-- _ESLint_ : "Quality of code" tool, ensures chosen rules will be enforced
-- _Prettier_ : "Quality of code" tool as well, focuses on the styleguide
-- _ Airbnb Standard_ : One of the most known "standards", even though it's not officially linked to ES/JS
-- _Nodemon_ : Allows to restart the server everytime a .js file is udated
-
-### Deployment
-
-For deployment, you have to go to `secrets` → app `actions` on the github repo to insert via `New repository secret` :
-
-- CAPROVER_BACK_APPNAME : name app on caprover
-- CAPROVER_FRONT_APPNAME : name app on caprover
-- CAPROVER_PASSWORD : password caprover
-- CAPROVER_SERVER : link of domain
+- Marta MISZKE : https://github.com/MyMoccca
+- Cyrielle THOMAS : https://github.com/CyrThoDev
+- Lucas DEGRET : https://github.com/MrCelsus
+- Sacha COMETTI : https://github.com/Aikofr
+- Robin DENIS : https://github.com/Robin31

@@ -1,0 +1,47 @@
+.brandname-cont {
+  margin-top: 3rem;
+}
+
+.smallbtn {
+  padding: 0;
+}
+
+.button-container button {
+  width: 8rem;
+  height: 2rem;
+  flex-shrink: 0;
+  border-radius: 2rem;
+  border: 3px solid #e26d7d;
+  margin-top: 5rem;
+}
+
+.button-container {
+  margin-left: 5rem;
+}
+
+.select-cont {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.select-cont select {
+  border: none;
+  height: 3rem;
+  font-family: $title-font-family;
+  font-size: 1.3rem;
+  border-bottom: 5px solid;
+  border-color: #00acb0;
+  background: #f9f7f7;
+}
+
+.width-bar {
+  min-width: 100% !important;
+  display: flex;
+}
+
+.thumbnail-picture {
+  width: 66px;
+  height: 102px;
+}

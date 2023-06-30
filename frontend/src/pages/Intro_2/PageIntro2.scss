@@ -1,0 +1,273 @@
+/* TEXT DEFILEMENT ANIMATION*/
+
+.personnage-picture {
+  width: 200px;
+  height: 308px;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.first-text {
+  display: flex;
+}
+
+.intro-container {
+  font-family: $title-font-family;
+  color: $background-black;
+  font-size: 3rem;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: row;
+}
+
+@media only screen and (max-width: 600px) {
+  .intro-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+  }
+}
+
+.intro-script {
+  font-family: $base-font-script;
+  color: $background-black;
+  font-size: 3rem;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0;
+}
+
+.animation {
+  height: 70px;
+  overflow: hidden;
+  text-align: left;
+}
+
+.animation>div>div {
+  padding: 0.25rem 0.75rem;
+  height: 2.81rem;
+  margin-bottom: 2.81rem;
+  display: inline-block;
+}
+
+.animation div:first-child {
+  animation: text-animation 8s infinite;
+}
+
+.first div {
+  border-bottom: 3px solid $red;
+}
+
+.second div {
+  border-bottom: 3px solid $yellow;
+}
+
+.third div {
+  border-bottom: 3px solid $green;
+}
+
+@keyframes text-animation {
+  0% {
+    margin-top: 0;
+  }
+
+  10% {
+    margin-top: 0;
+  }
+
+  20% {
+    margin-top: -5.62rem;
+  }
+
+  30% {
+    margin-top: -5.62rem;
+  }
+
+  40% {
+    margin-top: -11.24rem;
+  }
+
+  60% {
+    margin-top: -11.24rem;
+  }
+
+  70% {
+    margin-top: -5.62rem;
+  }
+
+  80% {
+    margin-top: -5.62rem;
+  }
+
+  90% {
+    margin-top: 0;
+  }
+
+  100% {
+    margin-top: 0;
+  }
+}
+
+/*CITATION ANIMATION text*/
+
+.css-typing {
+  background-color: rgb(248, 248, 248);
+  border-top: 2px solid $yellow;
+  border-bottom: 2px solid $yellow;
+  margin-top: 1rem;
+}
+
+.css-typing p {
+  border-right: 0.15em solid orange;
+  font-family: $title-font-family;
+  font-size: 1.4rem;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-top: 0.4rem;
+  margin-bottom: 0;
+}
+
+.css-typing p:nth-child(1) {
+  width: 14em;
+  -webkit-animation: type 1s steps(40, end);
+  animation: type 1s steps(40, end);
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.css-typing p:nth-child(2) {
+  width: 14em;
+  opacity: 0;
+  -webkit-animation: type2 1s steps(40, end);
+  animation: type2 1s steps(40, end);
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.css-typing p:nth-child(3) {
+  width: 14em;
+  opacity: 0;
+  -webkit-animation: type3 1s steps(20, end),
+    blink 0.5s step-end infinite alternate;
+  animation: type3 1s steps(20, end), blink 0.3s step-end infinite alternate;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+@keyframes type {
+  0% {
+    width: 0;
+  }
+
+  99.9% {
+    border-right: 0.15em solid orange;
+  }
+
+  100% {
+    border: none;
+  }
+}
+
+@-webkit-keyframes type {
+  0% {
+    width: 0;
+  }
+
+  99.9% {
+    border-right: 0.15em solid orange;
+  }
+
+  100% {
+    border: none;
+  }
+}
+
+@keyframes type2 {
+  0% {
+    width: 0;
+  }
+
+  1% {
+    opacity: 1;
+  }
+
+  99.9% {
+    border-right: 0.15em solid orange;
+  }
+
+  100% {
+    opacity: 1;
+    border: none;
+  }
+}
+
+@-webkit-keyframes type2 {
+  0% {
+    width: 0;
+  }
+
+  1% {
+    opacity: 1;
+  }
+
+  99.9% {
+    border-right: 0.15em solid orange;
+  }
+
+  100% {
+    opacity: 1;
+    border: none;
+  }
+}
+
+@keyframes type3 {
+  0% {
+    width: 0;
+  }
+
+  1% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes type3 {
+  0% {
+    width: 0;
+  }
+
+  1% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@-webkit-keyframes blink {
+  50% {
+    border-color: tranparent;
+  }
+}
