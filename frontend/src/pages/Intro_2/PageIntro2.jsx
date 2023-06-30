@@ -1,7 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import AbbePierre from "../../assets/abbe-pierre.png";
+import { useCurrentUser } from "../../contexts/AuthContexts";
 
 function PageIntro2() {
+  const navigate = useNavigate();
+  const { user } = useCurrentUser();
+
+  setTimeout(() => {
+    navigate("/form");
+  }, 10000);
+
   return (
     <div className="intro-container">
       <img
@@ -15,13 +24,13 @@ function PageIntro2() {
           <p className="intro-script">Bonjour</p>
           <section className="animation">
             <div className="first">
-              <div>Cyrielle</div>
+              <div>Bienvenue</div>
             </div>
             <div className="second">
-              <div>Thomas</div>
+              <div>{user.firstname}</div>
             </div>
             <div className="third">
-              <div>Cyrielle</div>
+              <div>Bienvenue</div>
             </div>
           </section>
         </div>

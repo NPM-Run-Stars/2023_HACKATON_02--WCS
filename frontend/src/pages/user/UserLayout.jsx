@@ -10,7 +10,6 @@ function UserLayout() {
     return (
       <div>
         <NavBar />
-        <h1>Salut user !</h1>
         <Outlet />
       </div>
     );
