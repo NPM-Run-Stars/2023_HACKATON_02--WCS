@@ -3,7 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import connexion from "../../../services/connexion";
 import AbbePierre from "../../../assets/abbe-pierre.png";
 
-function PutInformations({ handlePhone, handleValue }) {
+function PutInformations({ handlePhone }) {
   const [AllBrands, setAllBrands] = useState([]);
   const [AllModels, setAllModels] = useState([]);
   const [AllRams, setAllRams] = useState([]);
@@ -99,36 +99,36 @@ function PutInformations({ handlePhone, handleValue }) {
             </select>
 
             <select
-              name="model"
-              onChange={(e) => handlePhone(e.target.name, e.target.value)}
+              name="model_id"
+              onChange={(e) => handlePhone(e.target.name, +e.target.value)}
             >
               <option value="">Selectionnez le modèle</option>
               {AllModels.map((model) => (
-                <option value={model.model} key={model.id}>
+                <option value={model.id} key={model.id}>
                   {model.model}
                 </option>
               ))}
             </select>
 
             <select
-              name="value_ram"
-              onChange={(e) => handleValue(e.target.name, e.target.value)}
+              name="ram_id"
+              onChange={(e) => handlePhone(e.target.name, +e.target.value)}
             >
               <option value="">Quelle est la RAM?</option>
               {AllRams.map((ram) => (
-                <option value={ram.value_ram} key={ram.id}>
+                <option value={ram.id} key={ram.id}>
                   {ram.property_ram}
                 </option>
               ))}
             </select>
 
             <select
-              name="value_storage"
-              onChange={(e) => handleValue(e.target.name, e.target.value)}
+              name="storage_id"
+              onChange={(e) => handlePhone(e.target.name, +e.target.value)}
             >
               <option value="">Quelle est la capacité de la mémoire?</option>
               {AllStorages.map((storage) => (
-                <option value={storage.value_storage} key={storage.id}>
+                <option value={storage.id} key={storage.id}>
                   {storage.property_storage}
                 </option>
               ))}

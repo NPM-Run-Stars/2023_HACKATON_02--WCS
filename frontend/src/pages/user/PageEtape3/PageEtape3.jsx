@@ -4,9 +4,55 @@ import connexion from "../../../services/connexion";
 import MobilePhone from "../../../assets/mobile-phone_800x800px.png";
 import AbbePierre from "../../../assets/abbe-pierre.png";
 
-function PageEtape3({ phone, handleValue }) {
+function PageEtape3({ phone, setPhoneValue, phoneValue }) {
   const [allScreens, setAllScreens] = useState([]);
   const [allCases, setAllCases] = useState([]);
+  const [oneBrand, setOneBrand] = useState([]);
+  const [oneModel, setOneModel] = useState([]);
+  const [oneRam, setOneRam] = useState([]);
+  const [oneStorage, setOneStorage] = useState([]);
+
+  const getOneBrand = async () => {
+    try {
+      const brand = await connexion.get(`/brands/${phone.brand}`);
+      setOneBrand(brand);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const getOneModel = async () => {
+    try {
+      const model = await connexion.get(`/models/${phone.model_id}`);
+      setOneModel(model);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const getOneRam = async () => {
+    try {
+      const ram = await connexion.get(`/rams/${phone.ram_id}`);
+      setOneRam(ram);
+      await setPhoneValue({ ...phoneValue, value_ram: ram.value_ram });
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const getOneStorage = async () => {
+    try {
+      const storage = await connexion.get(`/storages/${phone.storage_id}`);
+      setOneStorage(storage);
+      await setPhoneValue({
+        ...phoneValue,
+        value_storage: storage.value_storage,
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   const getScreens = async () => {
     try {
       const screens = await connexion.get("/screens");
@@ -27,9 +73,11 @@ function PageEtape3({ phone, handleValue }) {
   useEffect(() => {
     getScreens();
     getCases();
+    getOneBrand();
+    getOneModel();
+    getOneRam();
+    getOneStorage();
   }, []);
-
-  console.info(handleValue);
 
   return (
     <div>
@@ -57,19 +105,20 @@ function PageEtape3({ phone, handleValue }) {
           />
           <div className="texte-container">
             <h3 className="nom-modele">
-              <span className="bleu">Modèle : </span> {phone.model}
+              <span className="bleu">Modèle : </span> {oneBrand.brand}
             </h3>
             <div className="modele-description">
               <div className="descript-line">
                 <BiArrowFromLeft width="0.5em" />{" "}
-                <span className="bleu">Marque :</span> {phone.brand}
+                <span className="bleu">Marque :</span> {oneModel.model}
               </div>
               <div className="descript-line">
-                <BiArrowFromLeft /> <span className="bleu">RAM :</span> Apple
+                <BiArrowFromLeft /> <span className="bleu">RAM :</span>{" "}
+                {oneRam.property_ram} Go
               </div>
               <div className="descript-line">
                 <BiArrowFromLeft /> <span className="bleu">Stockage :</span>{" "}
-                Apple
+                {oneStorage.property_storage} Go
               </div>
             </div>
           </div>
@@ -85,10 +134,16 @@ function PageEtape3({ phone, handleValue }) {
                     <input
                       type="radio"
                       id={screen.id}
-                      name="screen_id"
+                      name="value_screen"
                       value={screen.value_screen}
-                      checked
+                      checked={screen.value_screen === phoneValue.value_screen}
                       className="radio-list"
+                      onChange={() =>
+                        setPhoneValue({
+                          ...phoneValue,
+                          value_screen: screen.value_screen,
+                        })
+                      }
                     />
                     <label htmlFor={screen.id}>{screen.state_screen}</label>
                   </div>
@@ -99,17 +154,22 @@ function PageEtape3({ phone, handleValue }) {
           <div className="radio-container">
             <fieldset>
               <legend className="radio-legende">Etat du chassis</legend>
-
               {allCases.map((oneCase) => {
                 return (
                   <div className="radio-label">
                     <input
                       type="radio"
                       id={oneCase.id}
-                      name="case_id"
-                      value={oneCase.value_oneCase}
-                      checked
+                      name="value_case"
+                      checked={oneCase.value_case === phoneValue.value_case}
+                      value={oneCase.id}
                       className="radio-list"
+                      onChange={() =>
+                        setPhoneValue({
+                          ...phoneValue,
+                          value_case: oneCase.value_case,
+                        })
+                      }
                     />
                     <label htmlFor={oneCase.id}>{oneCase.state_case}</label>
                   </div>

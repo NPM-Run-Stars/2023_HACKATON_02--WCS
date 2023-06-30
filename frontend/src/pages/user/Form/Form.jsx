@@ -12,9 +12,12 @@ function Form() {
   const [way, setWay] = useState("");
 
   const [phone, setPhone] = useState({
-    id: null,
     brand: "",
-    model: "",
+    model_id: null,
+    ram_id: null,
+    storage_id: null,
+    case_id: null,
+    screen_id: null,
   });
 
   const [phoneValue, setPhoneValue] = useState({
@@ -28,32 +31,33 @@ function Form() {
     setPhone({ ...phone, [name]: value });
   };
 
-  const handleValue = (name, value) => {
-    setPhoneValue({ ...phoneValue, [name]: value });
-  };
-
   const pageDisplay = () => {
     if (page === 1) {
       return <PageEtape1 setWay={setWay} />;
     }
     if (page === 2 && way === "model") {
-      return <PageEtape2 handlePhone={handlePhone} handleValue={handleValue} />;
+      return <PageEtape2 handlePhone={handlePhone} />;
     }
     if (page === 2 && way === "imei") {
-      return (
-        <ImeiInformations handlePhone={handlePhone} handleValue={handleValue} />
-      );
+      return <ImeiInformations handlePhone={handlePhone} />;
     }
     if (page === 3) {
       return (
         <PageEtape3
           phone={phone}
+          handlePhone={handlePhone}
           phoneValue={phoneValue}
-          handleValue={handleValue}
+          setPhoneValue={setPhoneValue}
         />
       );
     }
-    return <PageEtape4 phoneValue={phoneValue} />;
+    return (
+      <PageEtape4
+        phone={phone}
+        phoneValue={phoneValue}
+        setPhoneValue={setPhoneValue}
+      />
+    );
   };
   return (
     <div className="form">
