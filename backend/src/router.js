@@ -29,6 +29,7 @@ router.put("/admin/update/:id", profileControllers.AdmineditUserbyId);
 router.get("/brands", brandsControllers.browse);
 router.get("/brands/:brand", brandsControllers.read);
 router.get("/models", mobileModelsControllers.browse);
+router.get("/models/:id", mobileModelsControllers.read);
 router.get("/faqs", faqsControllers.browse);
 router.get("/faqs/:id", faqsControllers.read);
 router.get("/rams", ramsControllers.browse);
