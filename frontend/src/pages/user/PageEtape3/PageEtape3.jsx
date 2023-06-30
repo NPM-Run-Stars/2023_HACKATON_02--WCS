@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BiArrowFromLeft } from "react-icons/bi";
 import connexion from "../../../services/connexion";
 import MobilePhone from "../../../assets/mobile-phone_800x800px.png";
+import AbbePierre from "../../../assets/abbe-pierre.png";
 
 function PageEtape3({ phone, handleValue }) {
   const [allScreens, setAllScreens] = useState([]);
@@ -32,7 +33,13 @@ function PageEtape3({ phone, handleValue }) {
 
   return (
     <div>
-      <div className="containerbar">
+      <div className="containerbar width-bar">
+        <img
+          className="personnage-picture thumbnail-picture"
+          src={AbbePierre}
+          alt="Abbe Pierre"
+          width="50px"
+        />
         <ul className="progressbar">
           <li className="active">Etape 1</li>
           <li className="active">Etape 2</li>

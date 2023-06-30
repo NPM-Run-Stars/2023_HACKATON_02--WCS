@@ -65,6 +65,7 @@ function Form() {
               {" "}
               <button
                 type="button"
+                className="main-btn smallbtn"
                 disabled={page === 1}
                 onClick={() => setPage(() => page - 1)}
               >
@@ -72,6 +73,7 @@ function Form() {
               </button>
               <button
                 type="button"
+                className="main-btn smallbtn"
                 disabled={page === 4}
                 onClick={() => setPage(() => page + 1)}
               >
