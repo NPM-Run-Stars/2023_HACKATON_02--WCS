@@ -53,7 +53,11 @@ function AdminCard() {
   return (
     <div>
       {profil[0].src ? (
-        <img src={profil[0].src} alt="profil de l'utilisateur" />
+        <img
+          className="imgUpdate"
+          src={profil[0].src}
+          alt="profil de l'utilisateur"
+        />
       ) : (
         <img
           src="https://cdn.pixabay.com/photo/2017/06/13/12/54/profile-2398783_1280.png"
@@ -61,32 +65,44 @@ function AdminCard() {
         />
       )}
 
-      <label htmlFor="firstname">Prénom</label>
+      <label className="label-title" htmlFor="firstname">
+        Prénom
+      </label>
       <input
+        className="basic-input animated"
         type="text"
         value={profil[0]?.firstname || ""}
         onChange={handleUser}
         name="firstname"
         required
       />
-      <label htmlFor="lastname">Nom</label>
+      <label className="label-title" htmlFor="lastname">
+        Nom
+      </label>
       <input
+        className="basic-input animated"
         type="text"
         value={profil[0]?.lastname || ""}
         onChange={handleUser}
         name="lastname"
         required
       />
-      <label htmlFor="src">Photo de profil</label>
+      <label className="label-title" htmlFor="src">
+        Photo de profil
+      </label>
       <input
+        className="basic-input animated"
         type="text"
         value={profil[0] ? profil[0].src : ""}
         onChange={handleUser}
         name="src"
         required
       />
-      <label htmlFor="email">Email</label>
+      <label className="label-title" htmlFor="email">
+        Email
+      </label>
       <input
+        className="basic-input animated"
         type="text"
         value={profil[0] ? profil[0].email : ""}
         onChange={handleUser}
@@ -94,16 +110,30 @@ function AdminCard() {
         required
       />
 
-      <select name="localisation_id" onClick={(event) => handleUser(event)}>
+      <label className="label-title" htmlFor="localisation">
+        localisation
+      </label>
+      <select
+        className="label-title"
+        name="localisation_id"
+        onClick={(event) => handleUser(event)}
+      >
         {localisationId.map((localisation) => (
-          <option key={localisation.id} value={localisation.id}>
+          <option
+            className="option-list"
+            key={localisation.id}
+            value={localisation.id}
+          >
             {localisation.place}
           </option>
         ))}
       </select>
-      <label htmlFor="localisation">localisation</label>
 
-      <button type="button" onClick={(event) => UpdateProfil(event)}>
+      <button
+        className="main-btn"
+        type="button"
+        onClick={(event) => UpdateProfil(event)}
+      >
         Mettre a jour le profil
       </button>
     </div>

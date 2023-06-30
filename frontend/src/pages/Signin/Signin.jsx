@@ -19,7 +19,7 @@ function Signin() {
 
   const notify = (signin) => {
     if (signin.status === 200) {
-      toast.success(signin.data.msg);
+      toast.success("Connexion réussie");
     } else if (signin.status === 400) {
       toast.warning(signin.data.msg);
     } else if (signin.status === 401) {
@@ -77,7 +77,7 @@ function Signin() {
           />
 
           <label htmlFor="password" className="label-title">
-            Password
+            MOT DE PASSE
           </label>
           <input
             type="password"
@@ -93,14 +93,13 @@ function Signin() {
             onClick={(event) => login(event)}
             className="main-btn"
           >
-            Signin
+            SE CONNECTER
           </button>
 
           <ToastContainer
             autoClose={2000}
             position="top-center"
             draggable
-            // pauseOnHover
             transition={Flip}
             toastClassName="custom-toast"
           />

@@ -22,6 +22,8 @@ function AdminProfil() {
 
   return (
     <div>
+      <h3 className="main-titel">Gestion des utilisateurs</h3>
+
       <Signup />
 
       <div className="Card">

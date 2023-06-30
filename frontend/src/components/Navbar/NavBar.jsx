@@ -61,7 +61,7 @@ function NavBar() {
               className="menu-item"
               onClick={closeNav}
             >
-              <AiFillSetting /> Paramètre
+              <AiFillSetting /> Paramètres
             </Link>
 
             <button type="button" className="deconnexion" onClick={logout}>

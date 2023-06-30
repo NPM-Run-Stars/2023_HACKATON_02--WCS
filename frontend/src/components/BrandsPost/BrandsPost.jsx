@@ -20,18 +20,25 @@ function BrandsPost() {
   };
 
   return (
-    <div>
-      <h3>Gestion des marques</h3>
+    <div className="form-container">
+      <h3 className="main-titel">Gestion des marques</h3>
 
-      <label htmlFor="brand">Marque</label>
+      <label className="label-title" htmlFor="brand">
+        Marque
+      </label>
       <input
+        className="basic-input animated"
         type="text"
         onChange={(event) => handleUser(event)}
         name="brand"
         required
       />
 
-      <button type="button" onClick={(event) => postBrand(event)}>
+      <button
+        className="main-btn"
+        type="button"
+        onClick={(event) => postBrand(event)}
+      >
         Ajouter
       </button>
     </div>
