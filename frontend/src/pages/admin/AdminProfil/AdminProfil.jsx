@@ -18,7 +18,7 @@ function AdminProfil() {
 
   useEffect(() => {
     getProfil();
-  }, [profils]);
+  }, []);
 
   return (
     <div>
