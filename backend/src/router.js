@@ -12,6 +12,7 @@ const storagesControllers = require("./controllers/storagesControllers");
 const casesControllers = require("./controllers/casesControllers");
 const screensControllers = require("./controllers/screensControllers");
 const profileControllers = require("./controllers/profileControllers");
+const phonesControllers = require("./controllers/phonesControllers");
 
 const { hashPassword } = require("./services/auth");
 const { checkUserData } = require("./services/checkUserData");
@@ -36,6 +37,7 @@ router.get("/storages", storagesControllers.browse);
 router.get("/storages/:id", storagesControllers.read);
 router.get("/cases", casesControllers.browse);
 router.get("/screens", screensControllers.browse);
+router.get("/phones", phonesControllers.browse);
 
 router.use(checkAdmin);
 router.get("/localisation", localisationControllers.browse);
@@ -59,5 +61,7 @@ router.delete("/rams/:id", ramsControllers.destroy);
 router.put("/storages/:id", storagesControllers.edit);
 router.post("/storages", storagesControllers.add);
 router.delete("/storages/:id", storagesControllers.destroy);
+
+router.post("/phones", phonesControllers.add);
 
 module.exports = router;
