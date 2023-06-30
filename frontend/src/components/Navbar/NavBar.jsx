@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { BsArrowBarLeft, BsFillPhoneFill } from "react-icons/bs";
+import { FaQuestion } from "react-icons/fa";
+import { FiUsers } from "react-icons/fi";
+import { AiFillBook, AiFillSetting } from "react-icons/ai";
 import { useCurrentUser } from "../../contexts/AuthContexts";
 
 function NavBar() {
@@ -22,15 +26,15 @@ function NavBar() {
     <div>
       <div className={`sidenav ${isSideNavOpen ? "active" : ""}`}>
         <button type="button" className="close" onClick={closeNav}>
-          ×
+          <BsArrowBarLeft />
         </button>
         <ul>
           <li>
             <Link to="/form" className="menu-item" onClick={closeNav}>
-              Téléphone
+              <BsFillPhoneFill /> Téléphone
             </Link>
             <Link to="/faq" className="menu-item" onClick={closeNav}>
-              F.A.Q
+              <FaQuestion /> F.A.Q
             </Link>
 
             {user.role === "admin" && (
@@ -40,14 +44,14 @@ function NavBar() {
                   className="menu-item"
                   onClick={closeNav}
                 >
-                  Marque
+                  <AiFillBook /> Marque
                 </Link>
                 <Link
                   to="/admin/profil"
                   className="menu-item"
                   onClick={closeNav}
                 >
-                  Utilisateur
+                  <FiUsers /> Utilisateur
                 </Link>
               </>
             )}
@@ -57,7 +61,7 @@ function NavBar() {
               className="menu-item"
               onClick={closeNav}
             >
-              Paramètre
+              <AiFillSetting /> Paramètre
             </Link>
 
             <button type="button" className="deconnexion" onClick={logout}>
