@@ -9,7 +9,7 @@ function PageIntro2() {
 
   setTimeout(() => {
     navigate("/form");
-  }, 10000);
+  }, 5000);
 
   return (
     <div className="intro-container">
