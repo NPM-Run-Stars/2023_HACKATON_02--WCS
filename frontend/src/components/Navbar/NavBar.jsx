@@ -45,9 +45,6 @@ function NavBar() {
                 >
                   Téléphone
                 </Link>
-                <Link to="/admin" className="menu-item" onClick={closeNav}>
-                  Accessoire
-                </Link>
                 <Link
                   to="/admin/profil"
                   className="menu-item"

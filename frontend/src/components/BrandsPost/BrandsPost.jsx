@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import connexion from "../../services/connexion";
 
-function Brands({ brands }) {
+function BrandsPost() {
   const [brand, setBrand] = useState({
     brand: "",
   });
@@ -13,8 +13,7 @@ function Brands({ brands }) {
   const postBrand = async (event) => {
     event.preventDefault();
     try {
-      const art = await connexion.post("/brands", brand);
-      setBrand(art);
+      await connexion.post("/brands", brand);
     } catch (error) {
       console.error(error);
     }
@@ -27,7 +26,6 @@ function Brands({ brands }) {
       <label htmlFor="brand">Marque</label>
       <input
         type="text"
-        value={brands.name}
         onChange={(event) => handleUser(event)}
         name="brand"
         required
@@ -40,4 +38,4 @@ function Brands({ brands }) {
   );
 }
 
-export default Brands;
+export default BrandsPost;

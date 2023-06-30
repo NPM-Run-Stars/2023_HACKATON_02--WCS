@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Brands from "../../../components/Brands/Brands";
+import BrandsPost from "../../../components/BrandsPost/BrandsPost";
+import BrandsCard from "../../../components/BrandsCard/BrandsCard";
 import connexion from "../../../services/connexion";
+import "./PhonePage.scss";
 
 function PhonePage() {
   const [brands, setBrands] = useState([]);
@@ -20,7 +22,13 @@ function PhonePage() {
 
   return (
     <div>
-      {brands.length > 0 ? <Brands brands={brands} /> : <p>Loading...</p>}
+      <BrandsPost />
+
+      <div className="brandContainer">
+        {brands.map((brand) => (
+          <BrandsCard brand={brand} />
+        ))}
+      </div>
     </div>
   );
 }
