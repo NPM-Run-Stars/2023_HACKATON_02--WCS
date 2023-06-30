@@ -105,12 +105,12 @@ function PageEtape3({ phone, setPhoneValue, phoneValue }) {
           />
           <div className="texte-container">
             <h3 className="nom-modele">
-              <span className="bleu">Modèle : </span> {oneBrand.brand}
+              <span className="bleu">Modèle : </span> {oneModel.model}
             </h3>
             <div className="modele-description">
               <div className="descript-line">
                 <BiArrowFromLeft width="0.5em" />{" "}
-                <span className="bleu">Marque :</span> {oneModel.model}
+                <span className="bleu">Marque :</span> {oneBrand.brand}
               </div>
               <div className="descript-line">
                 <BiArrowFromLeft /> <span className="bleu">RAM :</span>{" "}

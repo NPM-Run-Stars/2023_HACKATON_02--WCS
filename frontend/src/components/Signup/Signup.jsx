@@ -52,53 +52,80 @@ function Signup() {
   };
 
   return (
-    <div>
+    <div className="form-container">
       <form>
+        <label className="label-title" htmlFor="email">
+          Email
+        </label>
         <input
+          className="basic-input animated"
           type="email"
           value={userSignup.email}
           onChange={(event) => handleUser(event)}
           name="email"
           required
         />
-        <label htmlFor="email">Email</label>
+
+        <label className="label-title" htmlFor="password">
+          MOT DE PASSE
+        </label>
         <input
+          className="basic-input animated"
           type="password"
           value={userSignup.password}
           onChange={(event) => handleUser(event)}
           name="password"
           required
         />
-        <label htmlFor="password">Password</label>
 
+        <label className="label-title" htmlFor="firstname">
+          PRÉNOM
+        </label>
         <input
+          className="basic-input animated"
           type="text"
           value={userSignup.firstname}
           onChange={(event) => handleUser(event)}
           name="firstname"
           required
         />
-        <label htmlFor="firstname">firstname</label>
 
+        <label className="label-title" htmlFor="lastname">
+          NOM
+        </label>
         <input
+          className="basic-input animated"
           type="text"
           value={userSignup.lastname}
           onChange={(event) => handleUser(event)}
           name="lastname"
           required
         />
-        <label htmlFor="lastname">lastname</label>
 
-        <select name="localisation" onClick={(event) => handleUser(event)}>
+        <label className="label-title" htmlFor="localisation">
+          localisation
+        </label>
+        <select
+          className="label-title"
+          name="localisation"
+          onClick={(event) => handleUser(event)}
+        >
           {localisations.map((localisation) => (
-            <option key={localisation.id} value={localisation.id}>
+            <option
+              className="option-list"
+              key={localisation.id}
+              value={localisation.id}
+            >
               {localisation.place}
             </option>
           ))}
         </select>
-        <label htmlFor="localisation">localisation</label>
 
-        <button type="button" onClick={(event) => createAccount(event)}>
+        <button
+          className="main-btn"
+          type="button"
+          onClick={(event) => createAccount(event)}
+        >
           Ajouter
         </button>
         <ToastContainer
