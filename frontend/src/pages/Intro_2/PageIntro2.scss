@@ -51,7 +51,7 @@
   text-align: left;
 }
 
-.animation > div > div {
+.animation>div>div {
   padding: 0.25rem 0.75rem;
   height: 2.81rem;
   margin-bottom: 2.81rem;
@@ -116,7 +116,7 @@
   }
 }
 
-/*CITATION ANIMATION*/
+/*CITATION ANIMATION text*/
 
 .css-typing {
   background-color: rgb(248, 248, 248);
@@ -137,8 +137,8 @@
 
 .css-typing p:nth-child(1) {
   width: 14em;
-  -webkit-animation: type 2s steps(40, end);
-  animation: type 2s steps(40, end);
+  -webkit-animation: type 1s steps(40, end);
+  animation: type 1s steps(40, end);
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
@@ -146,10 +146,10 @@
 .css-typing p:nth-child(2) {
   width: 14em;
   opacity: 0;
-  -webkit-animation: type2 2s steps(40, end);
-  animation: type2 2s steps(40, end);
-  -webkit-animation-delay: 2s;
-  animation-delay: 2s;
+  -webkit-animation: type2 1s steps(40, end);
+  animation: type2 1s steps(40, end);
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
@@ -157,11 +157,11 @@
 .css-typing p:nth-child(3) {
   width: 14em;
   opacity: 0;
-  -webkit-animation: type3 3s steps(20, end),
+  -webkit-animation: type3 1s steps(20, end),
     blink 0.5s step-end infinite alternate;
-  animation: type3 5s steps(20, end), blink 0.5s step-end infinite alternate;
-  -webkit-animation-delay: 2s;
-  animation-delay: 4s;
+  animation: type3 1s steps(20, end), blink 0.3s step-end infinite alternate;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
