@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import connexion from "../../services/connexion";
+import connexion from "../../../services/connexion";
 
 function PutInformations({ handlePhone, handleValue }) {
   const [AllBrands, setAllBrands] = useState([]);

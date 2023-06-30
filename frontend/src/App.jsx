@@ -15,8 +15,7 @@ import Error from "./Error";
 /* CYRIELLE */
 
 /* MARTA */
-import PageIntro2 from "./pages/Intro_2/PageIntro2";
-import PageEtape3 from "./pages/PageEtape3/PageEtape3";
+
 /* ROBIN */
 
 /* LUCAS */
@@ -24,7 +23,7 @@ import "./App.scss";
 import "./assets/Fonts/sary-soft.soft-regular.otf";
 import "./assets/Fonts/sary-soft.soft-light.otf";
 import "./assets/Fonts/sary-soft.soft-semibold.otf";
-import Form from "./components/MultiStepForm/Form";
+import Form from "./pages/user/Form/Form";
 
 function App() {
   return (
@@ -55,11 +54,6 @@ function App() {
           <Route path="*" element={<Error />} />
         </Routes>
       </Router>
-
-      {/* page intro */}
-      <PageIntro2 />
-      {/* page etape3 */}
-      <PageEtape3 />
     </div>
   );
 }
