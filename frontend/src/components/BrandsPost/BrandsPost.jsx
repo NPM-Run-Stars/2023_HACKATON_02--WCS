@@ -1,0 +1,41 @@
+import React, { useState } from "react";
+import connexion from "../../services/connexion";
+
+function BrandsPost() {
+  const [brand, setBrand] = useState({
+    brand: "",
+  });
+
+  const handleUser = (event) => {
+    setBrand({ brand: event.target.value });
+  };
+
+  const postBrand = async (event) => {
+    event.preventDefault();
+    try {
+      await connexion.post("/brands", brand);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  return (
+    <div>
+      <h3>Gestion des marques</h3>
+
+      <label htmlFor="brand">Marque</label>
+      <input
+        type="text"
+        onChange={(event) => handleUser(event)}
+        name="brand"
+        required
+      />
+
+      <button type="button" onClick={(event) => postBrand(event)}>
+        Signup
+      </button>
+    </div>
+  );
+}
+
+export default BrandsPost;
