@@ -26,14 +26,11 @@ function NavBar() {
         </button>
         <ul>
           <li>
-            <Link to="/" className="menu-item" onClick={closeNav}>
-              Accueil
+            <Link to="/form" className="menu-item" onClick={closeNav}>
+              Téléphone
             </Link>
             <Link to="/faq" className="menu-item" onClick={closeNav}>
               F.A.Q
-            </Link>
-            <Link to="/form" className="menu-item" onClick={closeNav}>
-              Formulaire
             </Link>
 
             {user.role === "admin" && (
@@ -43,7 +40,7 @@ function NavBar() {
                   className="menu-item"
                   onClick={closeNav}
                 >
-                  Téléphone
+                  Marque
                 </Link>
                 <Link
                   to="/admin/profil"

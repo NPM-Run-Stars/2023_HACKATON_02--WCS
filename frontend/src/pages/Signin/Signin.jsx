@@ -41,13 +41,13 @@ function Signin() {
       if (profil.role === "admin") {
         setUser(profil);
         setTimeout(() => {
-          navigate("/admin");
-        }, 5000);
+          navigate("/intro");
+        }, 2000);
       } else {
         setUser(profil);
         setTimeout(() => {
-          navigate("/");
-        }, 5000);
+          navigate("/intro");
+        }, 2000);
       }
     } catch (err) {
       console.error(err);
@@ -97,10 +97,10 @@ function Signin() {
           </button>
 
           <ToastContainer
-            autoClose={5000}
+            autoClose={2000}
             position="top-center"
             draggable
-            pauseOnHover
+            // pauseOnHover
             transition={Flip}
             toastClassName="custom-toast"
           />

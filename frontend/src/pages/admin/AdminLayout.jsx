@@ -10,7 +10,6 @@ function AdminLayout() {
     return (
       <div>
         <NavBar />
-        <h1>Salut admin!</h1>
         <Outlet />
       </div>
     );
