@@ -84,6 +84,11 @@ const ScreensManager = require("./ScreensManager");
 models.screens = new ScreensManager();
 models.screens.setDatabase(pool);
 
+const PhonesManager = require("./PhonesManager");
+
+models.phones = new PhonesManager();
+models.phones.setDatabase(pool);
+
 // bonus: use a proxy to personalize error message,
 // when asking for a non existing model
 

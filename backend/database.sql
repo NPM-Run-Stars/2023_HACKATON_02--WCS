@@ -115,7 +115,6 @@ CREATE TABLE
         ram_id INT NOT NULL,
         storage_id INT NOT NULL,
         case_id INT NOT NULL,
-        price INT NOT NULL,
         category_id INT NOT NULL,
         localisation_id INT NOT NULL,
         CONSTRAINT fk_model_id FOREIGN KEY (model_id) REFERENCES mobile_models(id) ON DELETE CASCADE,
@@ -230,3 +229,14 @@ VALUES (
         "Ou va l'argent suite aux ventes de portables ?",
         "Dans les poches du grand patron."
     );
+
+INSERT INTO
+    phones (
+        model_id,
+        ram_id,
+        storage_id,
+        case_id,
+        category_id,
+        localisation_id
+    )
+VALUES (1, 1, 1, 3, 1, 1), (2, 1, 2, 1, 3, 3), (2, 1, 3, 3, 3, 1);
