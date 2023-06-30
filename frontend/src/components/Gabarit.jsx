@@ -15,7 +15,7 @@ function Gabarit() {
             Titre
             <input
               className="basic-input animated"
-              type="text"
+              type=""
               required
               minLength={1}
               maxLength={255}
@@ -68,7 +68,7 @@ function Gabarit() {
       </form>
 
       <div className="box">
-        <select name="" id="">
+        <select name="" id="" className="label-title">
           <option value="" className="option-list">
             Liste déroulante
           </option>

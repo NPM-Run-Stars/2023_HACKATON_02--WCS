@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BiArrowFromLeft } from "react-icons/bi";
-import MobilePhone from "../../assets/mobile-phone_800x800px.png";
+import MobilePhone from "../../../assets/mobile-phone_800x800px.png";
 
-function PageEtape4() {
+function PageEtape4({ phoneValue }) {
+  const [price, setPrice] = useState(0);
+  useEffect(() => {
+    setPrice(
+      +phoneValue.value_ram +
+        +phoneValue.value_storage +
+        +phoneValue.value_screen +
+        +phoneValue.value_case
+    );
+  }, []);
   return (
     <div>
       <div className="containerbar">
@@ -42,31 +51,8 @@ function PageEtape4() {
           </div>
         </div>
         <div className="etat_container">
-          <div className="chart_container">
-            Etat satisfaisant
-            <div className="statChartHolder">
-              <div className="progress-pie-chart" data-percent="67">
-                <div className="ppc-progress">
-                  <div className="ppc-progress-fill" />
-                </div>
-                <div className="ppc-percents">
-                  <div className="pcc-percents-wrapper">
-                    <span>20%</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
           <h2 className="Etat-title">Prix conseillé du téléphone </h2>
-          <div className="price">80 €</div>
-          <button type="button" className="main-btn btnred">
-            Envoyer au stock
-          </button>
-          <div className="btn-container smallbtn-ctn">
-            <button type="button" className="main-btn smallbtn">
-              Ajouter un autre téléphone
-            </button>
-          </div>
+          <div className="price">{price} €</div>
         </div>
       </div>
     </div>

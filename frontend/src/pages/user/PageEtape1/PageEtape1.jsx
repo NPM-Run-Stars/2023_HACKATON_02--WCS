@@ -1,6 +1,6 @@
 import React from "react";
-import imeiHand from "../../assets/ImeiHand.png";
-import modelHand from "../../assets/modelHand.png";
+import imeiHand from "../../../assets/ImeiHand.png";
+import modelHand from "../../../assets/modelHand.png";
 
 function ImeiOrModel({ setWay }) {
   return (
