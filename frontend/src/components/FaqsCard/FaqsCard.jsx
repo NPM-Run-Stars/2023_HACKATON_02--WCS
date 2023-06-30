@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./FaqsCard.scss";
+import { BsArrowReturnRight } from "react-icons/bs";
 
 function FaqsCard({ faq }) {
   const [open, setOpen] = useState(false);
@@ -11,7 +12,7 @@ function FaqsCard({ faq }) {
       </button>
       {open && (
         <div className="answer" id="reponse">
-          {faq.answer}
+          <BsArrowReturnRight /> {faq.answer}
         </div>
       )}
     </div>
