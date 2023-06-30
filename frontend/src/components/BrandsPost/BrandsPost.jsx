@@ -32,7 +32,7 @@ function BrandsPost() {
       />
 
       <button type="button" onClick={(event) => postBrand(event)}>
-        Signup
+        Ajouter
       </button>
     </div>
   );

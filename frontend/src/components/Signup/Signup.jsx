@@ -99,7 +99,7 @@ function Signup() {
         <label htmlFor="localisation">localisation</label>
 
         <button type="button" onClick={(event) => createAccount(event)}>
-          Signup
+          Ajouter
         </button>
         <ToastContainer
           autoClose={5000}
